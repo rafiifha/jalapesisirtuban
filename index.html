@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Jala Pesisir Tuban</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Kampanye digital: sampah di pantai Tuban butuh pengelola, bukan sekadar aksi bersih.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: satu kolom baca sederhana — judul, paragraf, grafik, tabel, lalu bagian berikutnya. Warna laut kalem, tanpa kartu berlebihan. */
+:root{
+  --foam:#f6f8f7; --surface:#ffffff; --ink:#22302f; --muted:#5a6b69; --line:#d6dfdc;
+  --sea:#2c6a6e; --sea-soft:#e7efed; --rope:#a5622f; --rope-soft:#f5ece3; --mesh:transparent;
+  --c1:#3f7f8a; --c2:#6c9a5e; --c3:#c27a45; --grid:#e6ecea; --bar:#2c6a6e; --bar-ink:#ffffff;
+  --f-display:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --f-essay:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-mono:"Source Sans 3","Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --foam:#141b1b; --surface:#1a2323; --ink:#dfe7e5; --muted:#9fb0ad; --line:#2f3d3c;
+  --sea:#7fb5b6; --sea-soft:#1f2e2e; --rope:#d99a66; --rope-soft:#2e241c; --mesh:transparent;
+  --c1:#5e9fab; --c2:#7fae70; --c3:#d18b57; --grid:#273433; --bar:#1f3b3d; --bar-ink:#e6efed; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --foam:#141b1b; --surface:#1a2323; --ink:#dfe7e5; --muted:#9fb0ad; --line:#2f3d3c;
+  --sea:#7fb5b6; --sea-soft:#1f2e2e; --rope:#d99a66; --rope-soft:#2e241c; --mesh:transparent;
+  --c1:#5e9fab; --c2:#7fae70; --c3:#d18b57; --grid:#273433; --bar:#1f3b3d; --bar-ink:#e6efed; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--surface);color:var(--ink);font:400 17px/1.65 var(--f-body);margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bar)}
+a{color:var(--sea);text-underline-offset:2px}
+a:hover{color:var(--rope)}
+:focus-visible{outline:2px solid var(--rope);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.25;text-wrap:balance;margin:0;color:var(--ink)}
+h2{font-size:1.55rem}
+h3{font-size:1.15rem}
+h4{font:700 .95rem/1.4 var(--f-body);color:var(--ink);margin:0 0 .35rem}
+.mono{font-size:.9rem;color:var(--muted)}
+.wrap{max-width:900px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.prose{max-width:68ch}
+.prose p{margin:0 0 1rem}
+p{margin:0 0 .9rem}
+
+/* nav */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bar);color:var(--bar-ink)}
+.top .wrap{display:flex;align-items:center;gap:.8rem;padding-block:.5rem;flex-wrap:wrap}
+.brand{font:700 1.1rem/1 var(--f-body);color:inherit;text-decoration:none;display:flex;gap:.45rem;align-items:center}
+.brand svg{flex:none;width:22px;height:22px}
+.nav{display:flex;gap:.1rem;flex-wrap:wrap;margin-left:auto}
+.nav a{font:400 .92rem/1 var(--f-body);color:inherit;text-decoration:none;padding:.45rem .55rem;border-radius:3px;opacity:.9}
+.nav a:hover{opacity:1;text-decoration:underline}
+.nav a[aria-current="page"]{opacity:1;font-weight:700;text-decoration:underline;text-underline-offset:5px}
+@media (max-width:760px){.nav{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:.2rem}}
+
+/* sections as pages */
+main section{padding-block:2rem 3rem}
+main section[hidden]{display:none}
+.sec-head{display:grid;gap:.35rem;margin-bottom:1.4rem;max-width:68ch}
+.sec-head p{margin:0;color:var(--muted)}
+
+/* beranda */
+.hero{background:var(--sea-soft)}
+.hero .wrap{padding-block:2rem 1.8rem;display:grid;gap:1rem}
+.hero h1{font-size:clamp(1.6rem,4vw,2.1rem);max-width:30ch}
+.hero h1 em{font-style:normal;color:var(--rope)}
+.hero .lede{font-size:1.05rem;max-width:66ch;margin:0}
+.stats{display:grid;gap:.35rem;max-width:68ch;margin:0;padding:0}
+.stats div{display:block;padding-left:1rem;position:relative;line-height:1.5}
+.stats div::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--sea)}
+.stats b{font-weight:700;color:var(--sea);margin-right:.3em}
+.stats small{font-size:.85rem;color:var(--muted)}
+.stats small::before{content:" (";}
+.stats small::after{content:")"}
+.tide{height:10px;background:radial-gradient(circle at 10px -4px,transparent 11px,var(--sea-soft) 12px) 0 0/20px 10px repeat-x}
+.cta{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.4rem;font:600 .95rem/1.2 var(--f-body);padding:.55rem .95rem;border-radius:4px;border:1px solid var(--sea);color:var(--sea);background:var(--surface);text-decoration:none;cursor:pointer}
+.btn.solid{background:var(--sea);color:var(--surface)}
+.btn:hover{border-color:var(--rope);color:var(--rope)}
+.btn.solid:hover{background:var(--rope);border-color:var(--rope);color:var(--surface)}
+
+.split{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:2rem;align-items:start}
+.split > *{min-width:0}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+.split h2{font-size:1.45rem!important}
+.note{border-left:3px solid var(--rope);padding:.2rem 0 .2rem 1rem}
+.note p{margin:0 0 .5rem}.note p:last-child{margin:0}
+.note .mono{font-weight:700;color:var(--rope)!important}
+
+/* masalah */
+.probs{display:grid;gap:0}
+.prob{padding:1.2rem 0;border-top:1px solid var(--line);display:grid;gap:.4rem}
+.prob:first-child{border-top:0;padding-top:0}
+.prob header{display:flex;flex-wrap:wrap;gap:.5rem;align-items:baseline}
+.prob header h3{flex-basis:100%;font-size:1.25rem}
+.prob p{margin:0}
+.pill{font-size:.85rem;font-weight:700;color:var(--rope)}
+.pill::before{content:"— "}
+details summary{cursor:pointer;font-weight:600;color:var(--sea);margin-top:.4rem}
+.hk{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:.6rem;font-size:.95rem}
+.hk ul{margin:0;padding-left:1.1rem}
+@media (max-width:640px){.hk{grid-template-columns:1fr}}
+
+/* tabel */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;vertical-align:top;padding:.6rem .7rem;border:1px solid var(--line)}
+thead th{font-weight:700;background:var(--sea-soft);color:var(--ink)}
+.matrix{min-width:680px}
+.matrix td small{display:block;color:var(--muted);font-size:.82rem;line-height:1.4;margin-top:.2rem}
+.num{font-weight:700;font-variant-numeric:tabular-nums}
+.matrix .total{font-size:1.1rem;color:var(--sea)}
+.policy{min-width:720px}
+.policy td:first-child{width:32%}
+.policy td p{margin:.35rem 0 0;color:var(--muted);font-size:.88rem}
+.score{display:inline-flex;gap:3px;align-items:center}
+.score i{width:9px;height:9px;border-radius:50%;border:1px solid var(--sea);display:inline-block}
+.score i.on{background:var(--sea)}
+.score b{font-size:.85rem;margin-left:.3rem}
+
+/* grafik */
+.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 2.4rem}
+@media (max-width:760px){.charts{grid-template-columns:1fr}}
+.card{display:grid;gap:.35rem;min-width:0;align-content:start}
+.card h3{font-size:1.1rem}
+.card p{margin:0;font-size:.95rem;color:var(--muted)}
+.chart{max-width:440px}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.chart text{font-family:var(--f-body);font-size:11px;fill:var(--muted)}
+.chart .val{fill:var(--ink);font-size:12px;font-weight:600}
+.chart .gridl{stroke:var(--grid);stroke-width:1}
+.chart .axis{stroke:var(--line)}
+.chart .bar{cursor:pointer}
+.chart .bar:hover,.chart .bar:focus{opacity:.82;outline:none}
+.src{font-size:.82rem;line-height:1.45;color:var(--muted);font-style:italic}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--surface);font:400 .85rem/1.35 var(--f-body);padding:.4rem .55rem;border-radius:3px;max-width:240px;z-index:20}
+.fig{margin:1.2rem 0;padding:0}
+.fig .chart{margin:0 auto}
+.fig figcaption{font-size:.88rem;line-height:1.45;color:var(--muted);font-style:italic;margin-top:.4rem;text-align:center}
+
+/* solusi */
+.steps{margin:0;padding-left:1.5rem;display:grid;gap:.7rem}
+.steps li{padding-left:.2rem}
+.steps li::marker{font-weight:700;color:var(--sea)}
+.steps b{display:block;font-weight:700}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin:1.2rem 0}
+.trio b{font-size:1.1rem;font-weight:700;color:var(--sea);display:block;margin-bottom:.2rem}
+.trio p{margin:0;font-size:.95rem}
+@media (max-width:640px){.trio{grid-template-columns:1fr;gap:.8rem}}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 2.2rem}
+.cols > *{min-width:0}
+@media (max-width:760px){.cols{grid-template-columns:1fr}}
+.list{margin:0;padding-left:1.2rem;display:grid;gap:.4rem;font-size:.97rem}
+.list span{display:block;color:var(--muted);font-size:.92rem}
+
+/* esai */
+.essay{padding:0}
+.essay h2{font-size:clamp(1.5rem,3.5vw,1.85rem);max-width:28ch}
+.essay .by{font-size:.92rem;color:var(--muted);margin:.5rem 0 1.5rem}
+.essay p{font-family:var(--f-essay);font-size:1.02rem;line-height:1.75;text-indent:1.5em;hyphens:auto}
+@media (min-width:640px){.essay p{text-align:justify}}
+.essay p.by{text-align:left;font-family:var(--f-body)}
+.essay h3{margin-top:1.5rem}
+.refs{font-size:.9rem;padding-left:0;list-style:none;display:grid;gap:.5rem}
+.refs li{padding-left:2.2em;text-indent:-2.2em;overflow-wrap:anywhere}
+
+/* aksi */
+.tool{background:var(--foam);border-radius:4px;padding:1.1rem 1.2rem;display:grid;gap:.8rem;min-width:0}
+.tool h2{font-size:1.4rem!important}
+.choices{display:flex;flex-wrap:wrap;gap:.45rem}
+.choices button{font:400 .95rem/1.2 var(--f-body);padding:.45rem .75rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer}
+.choices button[aria-pressed="true"]{border-color:var(--sea);background:var(--sea);color:var(--surface)}
+.choices button:hover{border-color:var(--sea)}
+.out{border-left:3px solid var(--sea);padding:.3rem 0 .3rem .9rem}
+.out p{margin:0 0 .4rem}.out p:last-child{margin:0}
+.path{font-size:.88rem;color:var(--muted)}
+label{display:block;font-size:.97rem}
+.field{display:grid;gap:.3rem}
+legend{font-size:.97rem}
+input[type=number],input[type=text],textarea,select{font:inherit;font-size:.97rem;padding:.45rem .6rem;border:1px solid var(--line);border-radius:3px;background:var(--surface);color:var(--ink);width:100%}
+textarea{min-height:5rem;resize:vertical}
+.chk{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem}
+.chk label{display:flex;gap:.4rem;align-items:center}
+.likert{display:flex;gap:.8rem;flex-wrap:wrap}
+.likert label{display:flex;gap:.25rem;align-items:center;font-size:.95rem}
+.big{font-size:1.6rem;font-weight:700;color:var(--rope)}
+pre.copy{white-space:pre-wrap;font:400 .9rem/1.5 var(--f-body);background:var(--surface);border:1px solid var(--line);padding:.7rem;border-radius:3px;margin:0;overflow-wrap:anywhere}
+.kv{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.35rem 1rem;font-size:.97rem}
+.kv dt{font-weight:700;color:var(--muted)}
+.kv dd{margin:0}
+footer{border-top:1px solid var(--line);padding-block:1.2rem;font-size:.88rem;color:var(--muted);background:var(--foam)}
+</style>
+
+<header class="top">
+ <div class="wrap">
+  <a class="brand" href="#beranda" aria-label="Jala Pesisir Tuban, ke beranda">
+   <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 15 3l12 6-12 6z"/><path d="M3 9l12 6v12L3 21zM27 9l-12 6v12l12-6z"/><path d="M9 6l12 6M21 6 9 12"/></g></svg>
+   Jala Pesisir
+  </a>
+  <nav class="nav" aria-label="Halaman">
+   <a href="#beranda">Beranda</a><a href="#masalah">Masalah</a><a href="#data">Data</a><a href="#kebijakan">Kebijakan</a><a href="#solusi">Solusi</a><a href="#esai">Esai</a><a href="#aksi">Aksi</a><a href="#tentang">Tentang</a><a href="#sumber">Sumber</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<!-- BERANDA -->
+<section id="beranda" style="padding:0">
+ <div class="hero">
+  <div class="wrap">
+   <span class="mono">Kampanye Kedaulatan Hijau · Kabupaten Tuban, Jawa Timur</span>
+   <h1>Pantai Tuban butuh <em>pengelola</em>, bukan sekadar aksi bersih.</h1>
+   <p class="lede">Sejak 2023, Pantai Boom berkali-kali dibersihkan beramai-ramai, lalu kembali dipenuhi plastik. Website ini menunjukkan mengapa sampahnya selalu kembali, aturan apa yang sebenarnya sudah ada, dan bagaimana warga pesisir bisa mengelola pantainya sendiri.</p>
+   <div class="stats" role="list">
+    <div role="listitem"><b>35,3%</b><span>sampah Kabupaten Tuban tidak terkelola</span><small>SIPSN 2023</small></div>
+    <div role="listitem"><b>90%</b><span>sampah hasil audit merek di Pantai Boom adalah plastik sekali pakai</span><small>Ecoton–Unirow, ±akhir 2023</small></div>
+    <div role="listitem"><b>±7 ton</b><span>sampah diangkut dari Pantai Boom dalam satu hari aksi bersih, lalu menumpuk lagi</span><small>9 Desember 2023</small></div>
+   </div>
+   <div class="cta"><a class="btn solid" href="#solusi">Lihat solusinya</a><a class="btn" href="#esai">Baca esai</a><a class="btn" href="#aksi">Ikut aksi &amp; beri umpan balik</a></div>
+  </div>
+ </div>
+ <div class="tide" aria-hidden="true"></div>
+ <div class="wrap" style="padding-block:2.4rem 3.5rem">
+  <div class="split">
+   <div class="prose">
+    <h2 style="font-size:2rem;margin-bottom:.8rem">Kenapa sampahnya kembali?</h2>
+    <p>Di tingkat kabupaten, plastik hanya sekitar 11% dari berat sampah. Di pantai, porsinya melonjak menjadi 75–90%. Plastik yang ringan dan mengapung lolos lewat saluran dan sungai, lalu terdampar di pasir.</p>
+    <p>Aturannya sebenarnya ada: Perda Pengelolaan Sampah Tuban yang diperbarui tahun 2025 mewajibkan pengelola kawasan mengangkut sampahnya dan melarang membuang sampah ke sungai. Masalahnya, pantai tidak punya pengelola yang jelas. Karena itu kami mengusulkan <b>JALA PESISIR</b>: jaring, pilah, setor.</p>
+   </div>
+   <aside class="note">
+    <p class="mono" style="color:var(--rope)">Untuk siapa website ini</p>
+    <p>Pelajar dan pemuda Tuban, pengunjung pantai, pedagang, nelayan, serta Dinas Lingkungan Hidup yang sedang menyiapkan aturan pelaksana Perda Pengelolaan Sampah.</p>
+    <p><a href="#aksi">Cek ke mana sampah bekal pantaimu pergi →</a></p>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<!-- MASALAH -->
+<section id="masalah" hidden>
+ <div class="wrap">
+  <div class="sec-head"><span class="mono">Eksplorasi masalah 2021–2026</span><h2>Tiga masalah lingkungan di Tuban</h2><p>Kami menelusuri tiga isu dengan data dan sumber yang bisa dicek. Ketiganya menyangkut hak warga atas lingkungan hidup yang baik dan sehat (Pasal 28H ayat 1 UUD 1945).</p></div>
+  <div class="probs"><article class="prob">
+  <header><span class="mono">Masalah 1</span><span class="pill main">Masalah utama</span><h3>Penanganan sampah di kawasan pantai Tuban</h3></header>
+  <p>Sampah—didominasi plastik sekali pakai dan popok—terus menumpuk di bibir pantai, terutama Pantai Boom (pusat kota) dan pesisir Kecamatan Palang. Aksi bersih berulang (Polres, Juli 2023; Yayasan Wings Peduli bersama Pemprov–Pemkab, Desember 2023, ±7 ton dalam sehari; TNI, Juni 2026), tetapi sampah kembali.</p><p>Akar masalah: sekitar sepertiga sampah kabupaten tidak terkelola (SIPSN 2023), layanan bank sampah/TPS3R belum menjangkau sebagian kecamatan pesisir, kebiasaan membuang sampah ke saluran/sungai, dan kawasan pantai belum punya pengelola sampah yang jelas.</p>
+  <details><summary>Hak yang terganggu &amp; kewajiban yang terabaikan</summary>
+   <div class="hk"><div><h4>Hak terganggu</h4><ul><li>Hak atas lingkungan hidup yang baik dan sehat (Pasal 28H ayat (1) UUD 1945; Pasal 65 UU 32/2009).</li><li>Hak memperoleh pelayanan pengelolaan sampah yang baik dan berwawasan lingkungan (Pasal 11 UU 18/2008).</li><li>Hak atas pekerjaan dan penghidupan yang layak bagi nelayan dan pedagang pesisir (Pasal 27 ayat (2) UUD 1945).</li></ul></div><div><h4>Kewajiban terabaikan</h4><ul><li>Setiap orang wajib mengurangi dan menangani sampah secara berwawasan lingkungan (Pasal 12 UU 18/2008) dan dilarang membuang sampah ke sungai/tempat umum (Pasal 36 Perda Tuban 10/2015 jo. 12/2025).</li><li>Produsen wajib mengelola kemasan yang sulit terurai (Pasal 15 UU 18/2008).</li><li>Pengelola kawasan wajib mengangkut sampah kawasannya; Pemda wajib menyediakan fasilitas pemilahan (Pasal 26 dan 18A Perda 12/2025).</li><li>Kewajiban menghormati hak asasi orang lain (Pasal 28J ayat (1) UUD 1945).</li></ul></div></div>
+  </details>
+</article>
+<article class="prob">
+  <header><span class="mono">Masalah 2</span><h3>Kekeringan dan krisis air bersih di wilayah karst Tuban</h3></header>
+  <p>Hampir setiap kemarau, desa di perbukitan kapur (Grabagan, Semanding, Parengan, Montong, Kerek, Jatirogo, dll.) kehabisan air. Pada 2021 BPBD mendistribusikan air ke 26 desa di 8 kecamatan.</p><p>Kemarau 2026 lebih parah: dari 15 desa (31 Agustus) menjadi 40 desa di 12 kecamatan (23 Oktober); anggaran droping BPBD hanya Rp40 juta dan diperkirakan habis akhir November, sehingga jeda kiriman melebar dari 2 hari menjadi 5 hari. Warga Grabagan pernah membeli air Rp150 ribu per tangki (2024).</p>
+  <details><summary>Hak yang terganggu &amp; kewajiban yang terabaikan</summary>
+   <div class="hk"><div><h4>Hak terganggu</h4><ul><li>Hak untuk hidup dan mempertahankan kehidupan (Pasal 28A UUD 1945).</li><li>Hak atas lingkungan hidup yang baik dan sehat, termasuk akses air bersih (Pasal 28H ayat (1)).</li><li>Air dikuasai negara untuk sebesar-besar kemakmuran rakyat (Pasal 33 ayat (3)); UU 17/2019 tentang Sumber Daya Air menjamin hak rakyat atas air untuk kebutuhan pokok minimal sehari-hari.</li></ul></div><div><h4>Kewajiban terabaikan</h4><ul><li>Kewajiban memelihara kelestarian fungsi lingkungan hidup, termasuk kawasan resapan karst dan sumber mata air (Pasal 67 UU 32/2009).</li><li>Kewajiban menghemat air dan tidak merusak sumber air bersama.</li><li>Kewajiban negara/pemerintah daerah menjamin pemenuhan air baku sebagai wujud sila ke-5 Pancasila.</li></ul></div></div>
+  </details>
+</article>
+<article class="prob">
+  <header><span class="mono">Masalah 3</span><h3>Pencemaran udara dan tanah akibat luberan BBM di TBBM Pertamina Jenu (10 Juni 2024)</h3></header>
+  <p>Dini hari 10 Juni 2024, tangki Pertamax di Fuel Terminal Tuban (Kec. Jenu) meluber. Uap BBM menyelimuti Desa Tasikharjo dan sekitarnya, BBM merembes ke jalan dan lahan warga.</p><p>BPBD mencatat ±1.700 warga mengungsi (Kepala Desa menyebut ±2.000) dan 5 warga dirawat di Puskesmas Jenu karena sesak napas. Jenu adalah kawasan industri migas yang berdampingan dengan permukiman dan pesisir.</p>
+  <details><summary>Hak yang terganggu &amp; kewajiban yang terabaikan</summary>
+   <div class="hk"><div><h4>Hak terganggu</h4><ul><li>Hak atas lingkungan hidup yang baik dan sehat serta pelayanan kesehatan (Pasal 28H ayat (1)).</li><li>Hak atas rasa aman (Pasal 28G ayat (1)).</li><li>Hak memperoleh informasi, termasuk akses informasi lingkungan (Pasal 28F UUD 1945; Pasal 65 ayat (2) UU 32/2009).</li></ul></div><div><h4>Kewajiban terabaikan</h4><ul><li>Pelaku usaha wajib memberi informasi lingkungan secara benar, akurat, terbuka, dan tepat waktu, menjaga keberlanjutan fungsi lingkungan, dan menaati baku mutu (Pasal 68 UU 32/2009).</li><li>Warga wajib mematuhi arahan evakuasi dan larangan menyalakan api saat insiden.</li><li>Pemerintah daerah wajib mengawasi keselamatan kawasan industri yang dekat permukiman.</li></ul></div></div>
+  </details>
+</article></div>
+ </div>
+</section>
+
+<!-- DATA -->
+<section id="data" hidden>
+ <div class="wrap">
+  <div class="sec-head"><span class="mono">Data &amp; urgensi</span><h2>Apa kata angkanya</h2><p>Arahkan kursor atau ketuk batang grafik untuk melihat nilainya. Semua grafik dibuat sendiri dari data yang sumbernya tercantum.</p></div>
+  <div class="charts">
+   <div class="card"><h3>Neraca sampah Tuban 2023</h3><p>Sepertiga sampah tidak dikurangi maupun ditangani.</p><div class="chart" data-chart="neraca" role="img" aria-label="Grafik neraca sampah Tuban 2023"></div><span class="src">Sumber: SIPSN 2023 dalam Wahdiana (2025)</span></div>
+   <div class="card"><h3>Porsi plastik naik di pantai</h3><p>Metode berbeda (berat vs. jumlah item), dibaca sebagai pola.</p><div class="chart" data-chart="plastik" role="img" aria-label="Grafik porsi plastik di tiga titik ukur"></div><span class="src">Sumber: Mutmainnah dkk. (2026); Kusumawati (2021); Beritajatim/Ecoton</span></div>
+   <div class="card"><h3>Data timbulan yang tidak konsisten</h3><p>Angka 2023 hampir dua kali lipat tahun lain, jadi yang kami pakai adalah proporsinya.</p><div class="chart" data-chart="timbulan" role="img" aria-label="Grafik timbulan sampah Tuban 2020, 2023, 2024"></div><span class="src">Sumber: Bappeda Tuban; Wahdiana (2025); Mutmainnah dkk. (2026)</span></div>
+   <div class="card"><h3>Desa kekeringan, kemarau 2026</h3><p>Masalah 2: naik hampir tiga kali lipat dalam delapan minggu.</p><div class="chart" data-chart="kering" role="img" aria-label="Grafik jumlah desa kekeringan Agustus sampai Oktober 2026"></div><span class="src">Sumber: BPBD Tuban via Beritajatim, Kabartuban, Radar Tuban</span></div>
+  </div>
+  <h3 style="margin:2.4rem 0 .6rem">Matriks urgensi</h3>
+  <p class="prose" style="margin:0 0 1rem;color:var(--muted)">Skor 1–5 untuk Dampak (D), Mendesak (M), Kemungkinan Solusi (S), dan Nilai Kemanusiaan (K).</p>
+  <div class="tbl"><table class="matrix"><thead><tr><th>Masalah</th><th>D</th><th>M</th><th>S</th><th>K</th><th>Total</th></tr></thead><tbody><tr><th scope="row">Penanganan sampah di kawasan pantai Tuban</th><td><b class="num">4</b><small>5 kecamatan pesisir; ekosistem laut, nelayan, wisata; ±1/3 sampah kabupaten tak terkelola</small></td><td><b class="num">4</b><small>menumpuk tiap hari dan berulang 2023–2026; Perbup pelaksana Perda 12/2025 wajib terbit ≤1 tahun</small></td><td><b class="num">5</b><small>bisa diuji di satu pantai, berbasis warga, biaya relatif kecil, ada payung hukum</small></td><td><b class="num">4</b><small>nelayan dan pedagang kecil pesisir; hak atas lingkungan sehat</small></td><td class="total num">17</td></tr>
+<tr><th scope="row">Kekeringan &amp; krisis air bersih (karst)</th><td><b class="num">5</b><small>40 desa di 12 kecamatan; menyangkut kebutuhan dasar</small></td><td><b class="num">5</b><small>sedang berlangsung; anggaran droping habis akhir November 2026</small></td><td><b class="num">2</b><small>butuh infrastruktur air dan kajian geologi karst, di luar jangkauan proyek individu</small></td><td><b class="num">5</b><small>hak hidup dan air untuk kebutuhan pokok; warga desa miskin</small></td><td class="total num">17</td></tr>
+<tr><th scope="row">Luberan BBM TBBM Pertamina Jenu</th><td><b class="num">4</b><small>±1.700–2.000 warga mengungsi; gangguan kesehatan</small></td><td><b class="num">3</b><small>insiden sudah tertangani; risiko berulang tetap ada</small></td><td><b class="num">2</b><small>kewenangan teknis ada pada korporasi dan pemerintah pusat</small></td><td><b class="num">4</b><small>keselamatan warga di sekitar industri</small></td><td class="total num">13</td></tr></tbody></table></div>
+  <div class="note" style="margin-top:1.2rem;max-width:72ch"><p><b>Skor seri 17–17.</b> Aturan pemecah seri ditetapkan sebelum menilai: skor Kemungkinan Solusi diutamakan karena ini proyek individu yang harus bisa diuji, lalu besarnya celah kebijakan. Sampah pantai unggul di keduanya. Kekeringan sudah ditangani lewat droping air BPBD; sampah pantai belum punya program pesisir sama sekali.</p><p>Kami juga mengakui bahwa secara kemanusiaan krisis air 2026 sangat mendesak, dan mencatatnya sebagai rekomendasi lanjutan.</p></div>
+ </div>
+</section>
+
+<!-- KEBIJAKAN -->
+<section id="kebijakan" hidden>
+ <div class="wrap">
+  <div class="sec-head"><span class="mono">Evaluasi kebijakan 2008–2025</span><h2>Aturannya ada, pelaksananya tidak</h2><p>Tujuh kebijakan dari tingkat kabupaten sampai nasional, dibandingkan dengan kondisi lapangan. Titik menunjukkan nilai pengaruh nyata terhadap sampah pantai (1–5).</p></div>
+  <div class="tbl"><table class="policy"><thead><tr><th>Kebijakan / program</th><th>Kondisi di lapangan</th><th>Nilai &amp; catatan</th></tr></thead><tbody><tr><td>UU No. 18 Tahun 2008 tentang Pengelolaan Sampah (nasional). Lahir setelah tragedi longsor TPA Leuwigajah 2005; menggeser paradigma lama &quot;kumpul–angkut–buang&quot; menjadi pengurangan dari sumber dan tanggung jawab produsen (Pasal 15).</td><td>Di Tuban 2023 masih 35,30% sampah tidak terkelola. TPA Gunung Panggung masih controlled landfill dengan keluhan bau. Kewajiban produsen belum terasa: brand audit di Pantai Boom menemukan 90% sampah berupa plastik sekali pakai.</td><td><span class="score" aria-label="Nilai 2 dari 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><b>2/5</b></span><p>Arah kebijakan tepat, tetapi kewajiban produsen tidak punya mekanisme penagihan di daerah; beban jatuh ke pemda dan relawan. Benturan kepentingan: produsen kemasan vs warga pesisir yang menanggung sampahnya.</p></td></tr>
+<tr><td>Perpres No. 83 Tahun 2018 tentang Penanganan Sampah Laut — Rencana Aksi Nasional 2018–2025 (nasional), target pengurangan sampah plastik ke laut 70% pada 2025.</td><td>Capaian nasional baru 35,36% per Oktober 2023. Di Tuban tidak ditemukan rencana aksi daerah sampah laut; penanganan pantai berupa aksi bersih insidental (Juli 2023, Desember 2023, Juni 2026).</td><td><span class="score" aria-label="Nilai 2 dari 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><b>2/5</b></span><p>Target nasional tidak diterjemahkan menjadi program pesisir kabupaten, sehingga tidak ada pelaksana tetap di garis pantai.</p></td></tr>
+<tr><td>Perpres No. 97 Tahun 2017 (Jakstranas) → Perbup Tuban No. 58 Tahun 2018 tentang Kebijakan dan Strategi Daerah Pengelolaan Sampah (kabupaten), mengikuti target nasional 2025: pengurangan 30%, penanganan 70%.</td><td>SIPSN 2023: pengurangan 27,72% (mendekati target), penanganan 36,99% (jauh dari 70%).</td><td><span class="score" aria-label="Nilai 3 dari 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><b>3/5</b></span><p>Sisi pengurangan berjalan berkat bank sampah warga (mis. BS Rumah Resik, Singgahan), tetapi kapasitas angkut dan olah tertinggal; sampah yang tidak terangkut menjadi sumber kebocoran ke sungai dan pantai.</p></td></tr>
+<tr><td>Perda Kab. Tuban No. 4 Tahun 2021 tentang Pengelolaan Sampah Plastik (kabupaten): aksi daerah berupa pendataan plastik sekali pakai, kampanye, pelarangan, insentif–disinsentif; produsen wajib melapor.</td><td>Perbup pelaksana wajib terbit paling lama 6 bulan (Pasal 20), tetapi dalam penelusuran JDIH penulis belum menemukan publikasinya. Plastik sekali pakai tetap mendominasi Pantai Boom 2023–2026. JDIH resmi Kabupaten Tuban masih mencatat perda ini berstatus Berlaku.</td><td><span class="score" aria-label="Nilai 2 dari 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><b>2/5</b></span><p>Regulasinya progresif (menyasar produsen dan mengakui hak atas lingkungan sehat), tetapi aturan pelaksananya belum terlihat dan dampaknya di pantai belum tampak. [Konfirmasi status Perbup ke DLH/PPID Tuban.]</p></td></tr>
+<tr><td>Perda Kab. Tuban No. 10 Tahun 2015 jo. Perda No. 12 Tahun 2025 tentang Pengelolaan Sampah (kabupaten): Pemda wajib menyediakan fasilitas pilah 3 jenis (Ps. 18A); pengelola kawasan wajib mengangkut sampah kawasannya (Ps. 26); larangan membuang sampah ke sungai/tempat umum (Ps. 36) dengan denda maks. Rp1 juta (Ps. 56); wewenang dapat dilimpahkan ke kecamatan/desa (Ps. 10); Perbup pelaksana ≤1 tahun (Ps. 61).</td><td>Masih baru (Perda 12/2025 diundangkan 30 Desember 2025). Hingga saat pengecekan, publikasi aturan pelaksananya belum ditemukan secara daring dan statusnya perlu dikonfirmasi kepada DLH/PPID Tuban. Juni 2026 Pantai Boom kembali didominasi plastik. Belum ada pengaturan khusus kawasan pantai wisata, dan belum jelas siapa &quot;pengelola kawasan&quot; Pantai Boom.</td><td><span class="score" aria-label="Nilai 3 dari 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><b>3/5</b></span><p>Kerangka paling lengkap sekaligus peluang: Perbup pelaksana yang sedang/akan disusun bisa memuat skema pantai berpengelola. Potensi konflik: siapa yang menanggung biaya angkut (DLH, Disparbudpora, atau pedagang).</p></td></tr>
+<tr><td>Program ISWMP (Bank Dunia–Kementerian PU) di Tuban sejak 2023 (nasional–kabupaten): TPST Gunung Panggung berbasis RDF berkapasitas 120 ton/hari; layanan 7 kecamatan termasuk Tuban, Palang, Jenu, Tambakboyo.</td><td>Investasi hilir besar, tetapi Kec. Jenu dan Kerek belum punya bank sampah/TPS3R aktif. Sampah yang sudah sampai di pantai atau laut tidak tersentuh. [Status operasi TPST perlu dikonfirmasi.]</td><td><span class="score" aria-label="Nilai 3 dari 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><b>3/5</b></span><p>Memperkuat pengolahan di hilir, belum mengubah perilaku di sumber pesisir.</p></td></tr>
+<tr><td>Gerakan Nasional Bulan Cinta Laut KKP (nasional, sejak 2022): nelayan diberi kompensasi untuk memungut sampah laut selama satu bulan.</td><td>2022: 14 wilayah, 1.477 nelayan, 67 ton sampah; Tuban tidak termasuk lokasi.</td><td><span class="score" aria-label="Nilai 1 dari 5"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><b>1/5</b></span><p>Model insentif nelayannya baik, tetapi tidak menjangkau Tuban dan hanya sebulan per tahun. Model ini diadopsi dan dimodifikasi dalam solusi.</p></td></tr></tbody></table></div>
+  <div class="split" style="margin-top:2rem">
+   <div class="prose">
+    <span class="mono">Hipotesis terpilih</span>
+    <h3 style="margin:.3rem 0 .8rem">Hipotesis A — kebijakan tidak efektif</h3>
+    <p>&quot;Saya menyimpulkan Hipotesis A karena berdasarkan evaluasi di atas, program Perda Pengelolaan Sampah Tuban (No. 10/2015 jo. 12/2025), Perda Sampah Plastik (No. 4/2021), dan Jakstrada (Perbup 58/2018) sebenarnya sudah mengatur pengurangan sampah, larangan membuang sampah ke sungai dan tempat umum, serta kewajiban pengelola kawasan, namun tidak efektif di garis pantai karena: (1) hingga saat pengecekan, publikasi aturan pelaksana kedua perda tersebut belum ditemukan secara daring dan statusnya perlu dikonfirmasi kepada DLH/PPID Tuban, sehingga mekanisme larangan dan sanksi di lapangan belum terlihat; (2) capaian penanganan baru 36,99% dari target 70%; (3) tidak ada pihak yang ditetapkan sebagai pengelola sampah kawasan pantai; dan (4) kewajiban produsen tidak ditagih walaupun 90% sampah di Pantai Boom adalah plastik sekali pakai.&quot;</p>
+    <p>Rantai sebab-akibat: karena kewajiban tidak diturunkan menjadi tugas yang jelas di lapangan, sampah yang tidak terangkut terbawa ke saluran dan sungai, sehingga menumpuk di pantai; akibatnya aksi bersih hanya memindahkan gejala tanpa menutup sumbernya.</p>
+<p>Unsur Hipotesis B tetap ada (belum ada aturan khusus kawasan pesisir), tetapi karena payung hukumnya sudah tersedia (Pasal 26 dan 36 Perda 12/2025), masalah utamanya adalah eksekusi.</p>
+<p>Perspektif sejarah: pada masa Orde Baru, UU No. 4/1982 dan program Adipura (sejak 1986) mengukur kebersihan terutama di pusat kota. UU 18/2008 menggeser paradigma ke pengurangan dari sumber, tetapi otonomi daerah membuat pelaksanaannya bergantung pada kapasitas tiap kabupaten—pola yang tampak di Tuban. Benturan kepentingan yang perlu dikelola: produsen kemasan vs warga pesisir, pedagang wisata vs nelayan, pemulung sebagai sektor informal, pembagian tugas DLH vs Disparbudpora, serta daerah hulu vs hilir sungai.</p>
+<p>Batasan bukti: data bersumber sekunder; status Perbup pelaksana perlu dikonfirmasi ke DLH/PPID Tuban; hipotesis diuji dengan membandingkan berat sampah di pantai sebelum dan sesudah uji coba solusi.</p>
+   </div>
+   <aside class="note"><p class="mono" style="color:var(--rope)">Jendela kebijakan</p><p>Perda Tuban No. 12 Tahun 2025, yang diundangkan 30 Desember 2025, mewajibkan peraturan bupati pelaksananya ditetapkan paling lama satu tahun sejak diundangkan. Hingga saat pengecekan, publikasi aturan pelaksana itu belum ditemukan secara daring dan statusnya perlu dikonfirmasi kepada DLH/PPID Tuban. Isinya masih bisa diberi masukan oleh warga.</p></aside>
+  </div>
+ </div>
+</section>
+
+<!-- SOLUSI -->
+<section id="solusi" hidden>
+ <div class="wrap">
+  <div class="sec-head"><span class="mono">Rancangan solusi</span><h2>JALA PESISIR</h2><p>Jaga Laut dari Sampah Pesisir: pantai berpengelola berbasis warga, uji coba tiga bulan di Pantai Boom.</p></div>
+  <div class="prose"><p>Restrukturisasi masalah: pantai kotor bukan semata soal kebersihan pantai, melainkan (1) kebocoran sampah dari darat dan (2) kawasan yang tidak punya penanggung jawab. Karena itu jawabannya bukan aksi bersih yang lebih sering, tetapi memberi pantai pengelola yang jelas dan menutup jalur kebocorannya.</p>
+<p>Pantai ditetapkan sebagai kawasan berpengelola dengan lembaga pengelola dari warga (kelompok nelayan, paguyuban pedagang, karang taruna, Pokdarwis) sesuai Pasal 18B Perda 12/2025. Lembaga ini memilah, mencatat, dan memakai data untuk menagih tanggung jawab produsen.</p></div>
+  <div class="trio">
+   <div><b>Jaring</b><p>Jaring penghalang dari jaring nelayan bekas di muara saluran, menahan sampah sebelum sampai ke pasir.</p></div>
+   <div><b>Pilah</b><p>Titik pilah tiga jenis di area pedagang, pintu masuk, dan dermaga.</p></div>
+   <div><b>Setor</b><p>Bank Sampah Pesisir: plastik ditabung, organik dikompos, residu ke TPST.</p></div>
+  </div>
+  <h3 style="margin:2rem 0 .4rem">Cara kerja</h3>
+  <ol class="steps"><li><b>Penetapan pengelola (bulan ke-1)</b><span>kelurahan dan paguyuban membentuk Tim JALA PESISIR (10–15 orang: nelayan, pedagang, pemuda, pelajar) dan mengusulkannya ke DLH dan Disparbudpora agar diakui sebagai lembaga pengelola sampah kawasan pantai serta dimasukkan dalam draf Perbup pelaksana Perda 12/2025.</span></li>
+<li><b>JARING (menutup jalur masuk)</b><span>jaring penghalang sederhana dari jaring nelayan bekas, pipa, dan pelampung dipasang di muara saluran/kali kecil yang bermuara ke pantai; dikuras dua kali seminggu.</span></li>
+<li><b>PILAH</b><span>titik pilah 3 jenis (organik, anorganik, residu/B3) di pintu masuk, area pedagang, dan dermaga sesuai Pasal 18A; pedagang menyediakan wadah dan mengumpulkan sampah lapaknya sebagai kesepakatan paguyuban.</span></li>
+<li><b>SETOR (Bank Sampah Pesisir)</b><span>nelayan, pedagang, dan pengunjung menyetor plastik bernilai, ditimbang, dan dicatat sebagai tabungan. Nelayan yang membawa pulang sampah dari laut mendapat poin tabungan (modifikasi Bulan Cinta Laut). Organik (sisa makanan, sabut kelapa) dijadikan kompos/cocopeat; anorganik bernilai dijual ke bank sampah induk/pengepul; residu dikirim ke TPST Gunung Panggung.</span></li>
+<li><b>AUDIT</b><span>brand audit setiap bulan untuk mencatat merek dominan; laporan triwulan dikirim ke DLH sebagai dasar menagih kewajiban produsen (Pasal 15 UU 18/2008; Pasal 22 ayat (2) huruf h Perda 12/2025) dan mengajak dukungan CSR.</span></li>
+<li><b>LAPOR &amp; KAMPANYE</b><span>kode QR di papan informasi pantai mengarah ke website kampanye, tempat pengunjung bisa membaca data timbangan, ikut kuis, dan memberi masukan; pesan utama &quot;bawa pulang sampahmu&quot;.</span></li>
+<li><b>Evaluasi &amp; replikasi</b><span>evaluasi tiap 3 bulan bersama kelurahan dan DLH; jika berhasil, direplikasi ke pantai Palang, Jenu, Tambakboyo, dan Bancar melalui pelimpahan kewenangan ke kecamatan/desa (Pasal 10 ayat (3) Perda 12/2025).</span></li></ol>
+  <div class="cols" style="margin-top:2rem">
+   <div><h4>Hubungan dengan hipotesis</h4><p>Hipotesis A menyatakan aturan sudah ada tetapi eksekusinya gagal karena tidak ada pelaksana di garis pantai, tidak ada data untuk menagih produsen, dan aksi bersih bersifat sesaat. JALA PESISIR menjawabnya satu per satu: (1) mengisi kekosongan &quot;pengelola kawasan&quot; (Pasal 26) dengan lembaga warga; (2) mengganti aksi bersih sesaat dengan jadwal rutin yang tercatat; (3) menghasilkan data brand audit untuk mengaktifkan kewajiban produsen; (4) memberi masukan konkret bagi Perbup pelaksana Perda 12/2025, yang menurut Pasal 61 ditetapkan paling lama satu tahun sejak perda diundangkan (30 Desember 2025).</p>
+<p>Ini modifikasi, bukan peniruan: bank sampah yang biasanya di permukiman diubah menjadi bank sampah pesisir; Bulan Cinta Laut yang hanya sebulan per tahun dan dikendalikan pusat diubah menjadi insentif rutin berbasis tabungan.</p></div>
+   <div><h4>Hak &amp; kewajiban warga</h4><p>Hak yang terpenuhi: lingkungan hidup yang baik dan sehat (Pasal 28H ayat (1) UUD 1945); pelayanan pengelolaan sampah (Pasal 11 UU 18/2008); informasi dan partisipasi (Pasal 28F; Pasal 65 ayat (2) UU 32/2009) melalui data terbuka di website; pekerjaan dan penghidupan layak (Pasal 27 ayat (2)) bagi nelayan dan pedagang dari nilai ekonomi sampah.</p>
+<p>Kewajiban yang didorong: mengurangi dan memilah sampah (Pasal 12 UU 18/2008; Pasal 49B Perda 12/2025); tidak membuang sampah ke saluran, sungai, atau pantai (Pasal 36); pedagang dan pengelola kawasan mengangkut sampah kawasannya (Pasal 26); produsen bertanggung jawab atas kemasannya (Pasal 15); semua pihak menghormati hak orang lain (Pasal 28J ayat (1)).</p>
+<p>Nilai Pancasila: gotong royong dan keadilan sosial. Demokrasi partisipatif: warga ikut menyusun usulan isi Perbup.</p></div>
+  </div>
+  <div class="cols" style="margin-top:1.5rem">
+   <div class="card"><h3>Indikator keberhasilan (3 bulan)</h3><ol class="list"><li>Berat sampah di bibir pantai per transek 100 m diukur pada minggu pertama sebagai data awal; turun ≥30% pada bulan ke-3.</li>
+<li>≥70% sampah yang terkumpul sudah terpilah 3 jenis.</li>
+<li>≥50 nasabah Bank Sampah Pesisir dan ≥500 kg plastik tercatat.</li>
+<li>2 jaring penghalang aktif dan dikuras ≥24 kali.</li>
+<li>3 laporan brand audit bulanan + 1 laporan triwulan diserahkan ke DLH.</li>
+<li>1 dokumen usulan tertulis untuk Perbup pelaksana Perda 12/2025 diserahkan ke DLH/DPRD.</li>
+<li>Website diuji ≥15 audiens dengan ≥80% menilai mudah dipahami; ≥100 pindaian QR selama uji coba.</li></ol></div>
+   <div class="card"><h3>Kendala &amp; mitigasi</h3><ul class="list"><li>Sampah kiriman dari laut/sungai di luar kendali lokal, terutama musim barat (Desember–Februari)<span>→ jaring di muara, target diukur per musim, data brand audit dipakai untuk koordinasi hulu bersama DLH.</span></li>
+<li>Partisipasi menurun setelah antusiasme awal<span>→ tabungan sampah, piket bergilir singkat (2 jam), penghargaan bulanan &quot;lapak terbersih&quot; (skema insentif Perda 12/2025).</span></li>
+<li>Tumpang tindih kewenangan DLH, Disparbudpora, kelurahan, Pokdarwis<span>→ kesepakatan tertulis pembagian tugas sejak bulan pertama.</span></li>
+<li>Pedagang merasa terbebani dan pemulung kehilangan sumber penghasilan<span>→ pedagang dijadikan pengurus; pemulung dirangkul sebagai mitra pemilah berbayar.</span></li>
+<li>Pendanaan berkelanjutan<span>→ campuran CSR, dana kelurahan, dan hasil jual sampah dengan laporan keuangan terbuka.</span></li>
+<li>Harga plastik turun<span>→ fokus pada jenis bernilai (botol PET, gelas plastik); sisanya ke TPST.</span></li>
+<li>Keselamatan saat memasang jaring di air<span>→ hanya di saluran dangkal, memakai APD, didampingi nelayan berpengalaman.</span></li>
+<li>Data tidak akurat<span>→ SOP penimbangan sederhana dan foto bukti setiap penimbangan.</span></li></ul></div>
+  </div>
+  <div class="card" style="margin-top:1rem"><h3>Sumber daya yang dibutuhkan</h3><ul class="list"><li>SDM: 10–15 anggota tim; 1 pendamping dari DLH; relawan pelajar untuk kampanye; pengepul/bank sampah induk sebagai mitra.</li>
+<li>Alat &amp; bahan (estimasi, cek harga lokal): 6 set titik pilah 3 wadah (±Rp350–500 ribu/set); 2 jaring penghalang dari jaring nelayan bekas + pipa PVC + pelampung (±Rp1–1,5 juta); 1 timbangan gantung digital (±Rp150–300 ribu); karung, sarung tangan, penjepit, APD (±Rp700 ribu); papan informasi + kode QR (±Rp500 ribu); 2 komposter sederhana (±Rp600 ribu); pencatatan dengan spreadsheet gratis.</li>
+<li>Dana: total awal ±Rp5–7 juta untuk 3 bulan, dari CSR perusahaan yang pernah terlibat aksi bersih di Pantai Boom, dana kelurahan, swadaya paguyuban, dan hasil penjualan sampah.</li>
+<li>Mitra: DLH, Disparbudpora, Kelurahan Kutorejo, paguyuban pedagang/Pokdarwis, kelompok nelayan, bank sampah induk, sekolah. Media: website kampanye (sudah dibuat).</li></ul></div>
+ </div>
+</section>
+
+<!-- ESAI -->
+<section id="esai" hidden>
+ <div class="wrap">
+  <article class="essay prose" style="max-width:780px;margin:0 auto">
+   <span class="mono">Teks esai · 921 kata</span>
+   <h2 style="margin-top:.5rem">Pantai Tuban Butuh Pengelola, Bukan Sekadar Aksi Bersih</h2>
+   <p class="by" style="text-indent:0">Oleh Khofifah Nur Aini · 12D Sorake · Sekolah Murid Merdeka</p>
+   <p>Setiap kali sebuah instansi menggelar aksi bersih di Pantai Boom, foto kantong sampah yang menggunung beredar sebagai bukti kepedulian. Pada 9 Desember 2023, misalnya, sekitar 400 peserta mengangkut kurang lebih tujuh ton sampah dari pantai di jantung kota Tuban itu (Beritajatim, 2023b). Namun, aksi serupa terus berulang: polisi melakukannya pada Juli 2023, prajurit TNI kembali melakukannya pada Juni 2026, dan sampah yang dipungut tetap didominasi plastik (Beritajatim, 2023a; Beritajatim, 2026). Pengulangan ini adalah gejala, bukan prestasi. Esai ini berargumen bahwa sampah di pantai Tuban bertahan bukan karena aturan tidak ada, melainkan karena aturan tidak pernah sampai ke garis pantai—kawasan itu tidak memiliki pengelola yang jelas.</p>
+<p>Persoalannya berakar di darat. Data Sistem Informasi Pengelolaan Sampah Nasional (SIPSN) 2023 mencatat bahwa 27,72% sampah Kabupaten Tuban dikurangi dan 36,99% ditangani; sisanya, 35,30%, tidak terkelola sama sekali (Wahdiana, 2025). Angka absolut tahun itu memang janggal—370,8 ribu ton, hampir dua kali data 2024 sebesar 192,9 ribu ton (Mutmainnah dkk., 2026)—sehingga yang patut dipegang adalah proporsinya: kira-kira sepertiga sampah lepas ke lingkungan. Yang lebih menarik adalah perubahan komposisinya. Di tingkat kabupaten, plastik hanya 11,02% dari berat sampah (Mutmainnah dkk., 2026), tetapi di Pantai Panyuran plastik mencapai 74,75% (Kusumawati, 2021) dan audit merek di Pantai Boom menemukan 90% sampah berupa plastik sekali pakai (Beritajatim, t.t.). Artinya, plastik yang ringan, mengapung, dan awet adalah sampah yang paling mudah lolos lewat saluran dan sungai, lalu terdampar di pantai.</p>
+<figure class="fig"><div class="chart" data-chart="neraca" role="img" aria-label="Grafik batang neraca sampah Tuban 2023"></div><figcaption>Gambar 1. Neraca pengelolaan sampah Kabupaten Tuban tahun 2023: sekitar sepertiga sampah tidak terkelola (diolah dari data SIPSN 2023 dalam Wahdiana, 2025).</figcaption></figure>
+<p>Masalah ini menyentuh hak konstitusional warga. Pasal 28H ayat (1) UUD 1945 menjamin hak setiap orang atas lingkungan hidup yang baik dan sehat, dan Pasal 11 UU No. 18 Tahun 2008 menjamin hak memperoleh pelayanan pengelolaan sampah. Di sisi lain, Pasal 12 undang-undang yang sama mewajibkan setiap orang mengurangi dan menangani sampahnya, sedangkan Pasal 15 mewajibkan produsen mengelola kemasan yang sulit terurai. Warga pesisir dan nelayan yang menggantungkan hidup pada Pantai Boom (Industry.co.id, 2023) menanggung dampaknya setiap hari, padahal sampahnya datang dari seluruh daratan dan dari kemasan yang tidak mereka produksi. Dalam negara demokrasi, ketimpangan seperti ini tidak cukup dijawab dengan imbauan; warga berhak menuntut, sekaligus berkewajiban ikut menjalankan, tata kelola yang adil.</p>
+<p>Ironisnya, Tuban tidak kekurangan aturan. Sejak 2015 kabupaten ini memiliki Perda Pengelolaan Sampah, yang pada 2025 diperbarui: pemerintah daerah wajib menyediakan fasilitas pemilahan, pengelola kawasan wajib mengangkut sampah kawasannya, dan membuang sampah ke sungai atau tempat umum diancam denda (Pemerintah Kabupaten Tuban, 2025). Sejak 2021 Tuban juga memiliki perda khusus sampah plastik yang mewajibkan produsen melapor dan hingga kini masih tercatat berlaku; namun, hingga saat pengecekan, publikasi peraturan bupati pelaksananya belum saya temukan secara daring (Pemerintah Kabupaten Tuban, 2021). Di tingkat nasional, Perpres No. 83 Tahun 2018 menargetkan pengurangan sampah plastik ke laut sebesar 70% pada 2025, tetapi capaiannya baru 35,36% per Oktober 2023 (Medcom.id, 2023). Karena itu, saya memilih Hipotesis A: masalah terjadi karena kebijakan sudah ada, tetapi eksekusinya tidak efektif—kewajiban tidak pernah diturunkan menjadi tugas yang jelas di garis pantai.</p>
+<p>Sebagian orang akan membantah bahwa masalahnya sederhana: warga saja yang malas membuang sampah pada tempatnya. Pendapat ini tidak sepenuhnya keliru, tetapi gagal menjelaskan mengapa aksi bersih sebesar tujuh ton sekalipun tidak mengubah keadaan tiga tahun kemudian. Perilaku dibentuk oleh sistem; di Jawa Timur pemerintah baru mampu menangani sekitar 40% sampah, sehingga sisanya dibakar atau ditimbun warga (Tamimi, 2023). Data lokal pun menunjukkan bahwa ketika layanan hadir, seperti Bank Sampah Rumah Resik di Singgahan, kebiasaan membuang sampah di pinggir jalan dapat berubah (Wahdiana, 2025). Sebaliknya, Kecamatan Jenu yang berada di pesisir tercatat belum memiliki bank sampah ataupun TPS3R yang aktif (Wahdiana, 2025).</p>
+<p>Oleh karena itu, saya menawarkan JALA PESISIR, model pantai berpengelola berbasis warga yang diuji di Pantai Boom. Kelompok nelayan, pedagang, dan pemuda ditetapkan sebagai lembaga pengelola sampah kawasan pantai—bentuk yang dimungkinkan Perda 12/2025 bagi lembaga kemasyarakatan desa dan kelurahan. Kerjanya mengikuti tiga kata: jaring, pilah, setor. Jaring penghalang dari jala bekas dipasang di muara saluran untuk menahan sampah sebelum mencapai pantai; titik pilah tiga jenis disediakan di area pedagang; plastik bernilai disetor ke bank sampah pesisir, sampah organik—termasuk sabut kelapa yang mendominasi Pantai Kelapa Panyuran (Titah dkk., 2024)—dijadikan kompos, dan residunya dikirim ke TPST Gunung Panggung yang dikembangkan melalui program ISWMP (Lokahita, 2025). Setiap bulan tim melakukan audit merek, lalu datanya dikirim ke dinas lingkungan hidup sebagai dasar menagih tanggung jawab produsen.</p>
+<p>Solusi ini menjawab hipotesis secara langsung: kekosongan pelaksana diisi lembaga warga, aksi bersih sesaat diganti jadwal rutin yang tercatat, dan kewajiban produsen yang selama ini diam diberi bukti berupa data. Bentuknya pun memodifikasi program yang sudah ada; insentif bagi nelayan mengambil semangat Gerakan Nasional Bulan Cinta Laut, yang pada 2022 belum menjangkau Tuban (Antara, 2022), tetapi dijalankan sepanjang tahun lewat tabungan sampah. Tentu ada risiko. Sampah kiriman dari laut tidak dapat dibendung oleh satu kelurahan, partisipasi bisa merosot setelah antusiasme awal, dan pedagang mungkin merasa terbebani. Risiko itu dimitigasi dengan mengukur target per musim, memberi insentif tabungan dan penghargaan bulanan, serta menjadikan pedagang dan pemulung sebagai pengurus berbayar, bukan sekadar objek aturan.</p>
+<p>Pantai Boom tidak membutuhkan lebih banyak foto aksi bersih; ia membutuhkan pihak yang bertanggung jawab atasnya setiap hari. Perda 12/2025, yang diundangkan pada 30 Desember 2025, mewajibkan peraturan pelaksananya terbit paling lama satu tahun, dan inilah jendela kebijakan yang tidak boleh terlewat. Saya merekomendasikan agar Dinas Lingkungan Hidup dan Disparbudpora memasukkan skema pantai berpengelola ke dalam peraturan bupati tersebut, sementara warga, sekolah, dan produsen mengambil bagian sesuai kewajibannya. Pada saat yang sama, krisis air yang melanda 40 desa pada Oktober 2026 (Andreyan, 2026) mengingatkan bahwa hak atas lingkungan yang sehat di Tuban sedang diuji dari banyak arah. Jika pantai saja bisa dikelola bersama, pelajaran itu dapat menjadi modal untuk menghadapi persoalan berikutnya.</p>
+   <h3 style="margin:2rem 0 .8rem">Daftar Pustaka</h3>
+   <ul class="refs"><li>Andreyan. (2026, 25 Oktober). BPBD Tuban terancam kehabisan anggaran air bersih, 40 desa terdampak kekeringan. <i>Radar Tuban</i>. <a href="https://radartuban.jawapos.com/daerah/2610250021/bpbd-tuban-terancam-kehabisan-anggaran-air-bersih-40-desa-terdampak-kekeringan" target="_blank" rel="noopener">https://radartuban.jawapos.com/daerah/2610250021/bpbd-tuban-terancam-kehabisan-anggaran-air-bersih-40-desa-terdampak-kekeringan</a></li>
+<li>Antara. (2022, Oktober). Gerakan Bulan Cinta Laut KKP rangkul nelayan angkut 67 ton sampah. <i>Antara Bali</i>. <a href="https://bali.antaranews.com/berita/296837/gerakan-bulan-cinta-laut-kkp-rangkul-nelayan-angkut-67-ton-sampah" target="_blank" rel="noopener">https://bali.antaranews.com/berita/296837/gerakan-bulan-cinta-laut-kkp-rangkul-nelayan-angkut-67-ton-sampah</a></li>
+<li>Beritajatim. (2023a, 13 Juli). Banyak sampah plastik dan pampers, ratusan personel Polres Tuban bersihkan Pantai Boom. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/?p=1026074" target="_blank" rel="noopener">https://beritajatim.com/?p=1026074</a></li>
+<li>Beritajatim. (2023b, 9 Desember). [Aksi bersih Pantai Boom Tuban kumpulkan 7 ton sampah]. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/?p=1109940" target="_blank" rel="noopener">https://beritajatim.com/?p=1109940</a></li>
+<li>Beritajatim. (2024, 14 Agustus). [Warga Grabagan Tuban kesulitan air bersih saat kemarau]. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/?p=1231413" target="_blank" rel="noopener">https://beritajatim.com/?p=1231413</a></li>
+<li>Beritajatim. (2024, Juni). [Lima warga terdampak uap tangki TBBM Tuban dipulangkan dari Puskesmas Jenu]. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/?p=1200567" target="_blank" rel="noopener">https://beritajatim.com/?p=1200567</a></li>
+<li>Beritajatim. (2026, Juni). Didominasi sampah plastik, ratusan prajurit Batalyon TP 932 Sunan Bonang bersih-bersih kawasan Pantai Boom Tuban. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/didominasi-sampah-plastik-ratusan-prajurit-batalyon-tp-932-sunan-bonang-bersih-bersih-kawasan-pantai-boom-tuban" target="_blank" rel="noopener">https://beritajatim.com/didominasi-sampah-plastik-ratusan-prajurit-batalyon-tp-932-sunan-bonang-bersih-bersih-kawasan-pantai-boom-tuban</a></li>
+<li>Beritajatim. (2026, 1 September). Kekeringan meluas, BPBD Tuban distribusikan 294 ribu liter air bersih ke 3.126 KK. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/kekeringan-meluas-bpbd-tuban-distribusikan-294-ribu-liter-air-bersih-ke-3-126-kk" target="_blank" rel="noopener">https://beritajatim.com/kekeringan-meluas-bpbd-tuban-distribusikan-294-ribu-liter-air-bersih-ke-3-126-kk</a></li>
+<li>Beritajatim. (t.t.). Ecoton dan mahasiswa kembali lakukan brand audit di pantai Tuban, penuh sampah plastik sekali pakai. <i>Beritajatim.com</i>. Diakses 30 Oktober 2026, dari <a href="https://beritajatim.com/ecoton-dan-mahasiswa-kembali-lakukan-brand-audit-di-pantai-tuban-penuh-sampah-plastik-sekali-pakai" target="_blank" rel="noopener">https://beritajatim.com/ecoton-dan-mahasiswa-kembali-lakukan-brand-audit-di-pantai-tuban-penuh-sampah-plastik-sekali-pakai</a></li>
+<li>Darmawan, A. D. (2026, 19 Agustus). 14,13% penduduk di Kabupaten Tuban masuk kategori miskin. <i>Databoks</i>. <a href="https://databoks.katadata.co.id/datapublish/2026/08/19/14-13-penduduk-di-kabupaten-tuban-masuk-kategori-miskin" target="_blank" rel="noopener">https://databoks.katadata.co.id/datapublish/2026/08/19/14-13-penduduk-di-kabupaten-tuban-masuk-kategori-miskin</a></li>
+<li>Industry.co.id. (2023, Desember). Yayasan WINGS Peduli gelar aksi bersih Pantai Boom Tuban, kerahkan ratusan masyarakat kumpulkan sampah. <i>Industry.co.id</i>. <a href="https://www.industry.co.id/read/128656/yayasan-wings-peduli-gelar-aksi-bersih-pantai-boom-tuban-kerahkan-ratusan-masyarakat-kumpulkan-sampah" target="_blank" rel="noopener">https://www.industry.co.id/read/128656/yayasan-wings-peduli-gelar-aksi-bersih-pantai-boom-tuban-kerahkan-ratusan-masyarakat-kumpulkan-sampah</a></li>
+<li>Kabartuban. (2026, 2 Oktober). Imbas kemarau panjang, 28 desa di Tuban mulai berebut pasokan air bersih. <i>Kabartuban.com</i>. <a href="https://kabartuban.com/imbas-kemarau-panjang-28-desa-di-tuban-mulai-berebut-pasokan-air-bersih/41976" target="_blank" rel="noopener">https://kabartuban.com/imbas-kemarau-panjang-28-desa-di-tuban-mulai-berebut-pasokan-air-bersih/41976</a></li>
+<li>Kabartuban. (2026, 7 September). Kemarau meluas, BPBD Tuban tangani krisis air bersih di 18 desa. <i>Kabartuban.com</i>. <a href="https://kabartuban.com/kemarau-meluas-bpbd-tuban-tangani-krisis-air-bersih-di-18-desa/41694" target="_blank" rel="noopener">https://kabartuban.com/kemarau-meluas-bpbd-tuban-tangani-krisis-air-bersih-di-18-desa/41694</a></li>
+<li>Kusumawati, M. M. (2021). <i>Pengelolaan daur ulang sampah plastik di kawasan wisata Pantai Panyuran Kabupaten Tuban untuk meningkatkan nilai jual sampah dengan peran serta masyarakat</i> [Skripsi, UPN Veteran Jawa Timur]. <a href="https://repository.upnjatim.ac.id/3472/" target="_blank" rel="noopener">https://repository.upnjatim.ac.id/3472/</a></li>
+<li>Lokahita, B. (2025). <i>Readiness preparation of the city for operating sustainable waste to RDF processing facility</i> [Materi presentasi]. Institute for Global Environmental Strategies. <a href="https://www.iges.or.jp/sites/default/files/2025-01/08.Dr_.%20Eng.%20Baskoro%20Lokahita_Readiness%20Preparation%20of%20the%20City%20for%20Operating%20Sustainable%20Waste%20to%20RDF%20Processing_GFacility.pdf" target="_blank" rel="noopener">https://www.iges.or.jp/sites/default/files/2025-01/08.Dr_.%20Eng.%20Baskoro%20Lokahita_Readiness%20Preparation%20of%20the%20City%20for%20Operating%20Sustainable%20Waste%20to%20RDF%20Processing_GFacility.pdf</a></li>
+<li>Medcom.id. (2023, 2 Oktober). Menengok komitmen pemerintah kurangi sampah laut hingga 70%. <i>Medcom.id</i>. <a href="https://www.medcom.id/nasional/peristiwa/DkqMmEpk-menengok-komitmen-pemerintah-kurangi-sampah-laut-hingga-70" target="_blank" rel="noopener">https://www.medcom.id/nasional/peristiwa/DkqMmEpk-menengok-komitmen-pemerintah-kurangi-sampah-laut-hingga-70</a></li>
+<li>Mulyono, J., &amp; Priantika, D. M. (2023). Tindakan sosial masyarakat dalam pemenuhan air bersih pada daerah kekeringan di Dusun Tlogopule Kabupaten Tuban. <i>Huma: Jurnal Sosiologi, 2</i>(2), 106–117. <a href="https://ppis.ulm.ac.id/index.php/JH/article/download/63/37" target="_blank" rel="noopener">https://ppis.ulm.ac.id/index.php/JH/article/download/63/37</a></li>
+<li>Mutmainnah, S., Larasati, D. A., Segara, N. B., &amp; Virgiawan, D. B. (2026). Pengaruh keberadaan Tempat Pembuangan Akhir (TPA) sampah Gunung Panggung Tuban terhadap kondisi sosial ekonomi masyarakat sekitar. <i>Dialektika Pendidikan IPS, 6</i>(2), 174–185. <a href="https://ejournal.unesa.ac.id/index.php/PENIPS/article/download/78158/55746/211343" target="_blank" rel="noopener">https://ejournal.unesa.ac.id/index.php/PENIPS/article/download/78158/55746/211343</a></li>
+<li>Pemerintah Kabupaten Tuban. (2021). <i>Peraturan Daerah Kabupaten Tuban Nomor 4 Tahun 2021 tentang Pengelolaan Sampah Plastik</i>. <a href="https://jdih.tubankab.go.id/peraturan/detail/222" target="_blank" rel="noopener">https://jdih.tubankab.go.id/peraturan/detail/222</a></li>
+<li>Pemerintah Kabupaten Tuban. (2021, 18 Oktober). <i>Pendistribusian bantuan air bersih, wilayah terdampak kekeringan di Kabupaten Tuban</i> [Video]. <a href="https://tubankab.go.id/video/pendistribusian-bantuan-air-bersih-wilayah-terdampak-kekeringan-di-kabupaten-tuban" target="_blank" rel="noopener">https://tubankab.go.id/video/pendistribusian-bantuan-air-bersih-wilayah-terdampak-kekeringan-di-kabupaten-tuban</a></li>
+<li>Pemerintah Kabupaten Tuban. (2025). <i>Peraturan Daerah Kabupaten Tuban Nomor 12 Tahun 2025 tentang Perubahan atas Peraturan Daerah Nomor 10 Tahun 2015 tentang Pengelolaan Sampah</i>. <a href="https://peraturan.bpk.go.id/Details/350863/perda-kab-tuban-no-12-tahun-2025" target="_blank" rel="noopener">https://peraturan.bpk.go.id/Details/350863/perda-kab-tuban-no-12-tahun-2025</a></li>
+<li>Republik Indonesia. (1945). <i>Undang-Undang Dasar Negara Republik Indonesia Tahun 1945</i>.</li>
+<li>Republik Indonesia. (2008). <i>Undang-Undang Nomor 18 Tahun 2008 tentang Pengelolaan Sampah</i>.</li>
+<li>Republik Indonesia. (2009). <i>Undang-Undang Nomor 32 Tahun 2009 tentang Perlindungan dan Pengelolaan Lingkungan Hidup</i>.</li>
+<li>Republik Indonesia. (2018). <i>Peraturan Presiden Nomor 83 Tahun 2018 tentang Penanganan Sampah Laut</i>.</li>
+<li>Rofiq, A. (2024, 10 Juni). Pertamina gerak cepat tangani kebocoran tangki TBBM Tuban. <i>DetikJatim</i>. <a href="https://www.detik.com/jatim/berita/d-7383409/pertamina-gerak-cepat-tangani-kebocoran-tangki-tbbm-tuban" target="_blank" rel="noopener">https://www.detik.com/jatim/berita/d-7383409/pertamina-gerak-cepat-tangani-kebocoran-tangki-tbbm-tuban</a></li>
+<li>Tamimi, M. (2023, 19 November). Penanganan sampah di Jawa Timur masih buruk. <i>Mongabay Indonesia</i>. <a href="https://mongabay.co.id/2023/11/19/penanganan-sampah-di-jawa-timur-masih-buruk/" target="_blank" rel="noopener">https://mongabay.co.id/2023/11/19/penanganan-sampah-di-jawa-timur-masih-buruk/</a></li>
+<li>Titah, H. S., Tangahu, B. V., Purwanti, I. F., Mangkoedihardjo, S., Mashudi, Santoso, I. B., &amp; In, H. (2024). Penentuan laju timbulan dan komposisi sampah dalam program pengabdian masyarakat di Wisata Pantai Kelapa Panyuran Kabupaten Tuban. <i>Sewagati: Jurnal Pengabdian kepada Masyarakat, 8</i>(4), 1900–1912. <a href="https://doi.org/10.12962/j26139960.v8i4.1098" target="_blank" rel="noopener">https://doi.org/10.12962/j26139960.v8i4.1098</a></li>
+<li>Wahdiana, L. N. (2025). Analisis strategi bank sampah sebagai media pengelolaan sampah rumah tangga di Desa Tingkis. <i>Jurnal Kesehatan Tambusai, 6</i>(3), 9498–9510. <a href="https://journal.universitaspahlawan.ac.id/index.php/jkt/article/download/47855/30115/167463" target="_blank" rel="noopener">https://journal.universitaspahlawan.ac.id/index.php/jkt/article/download/47855/30115/167463</a></li>
+<li>Yulianto, B. (2024, 10 Juni). Tangki Pertamina Tuban diduga bocor, ribuan warga mengungsi. <i>Metrotvnews.com</i>. <a href="https://www.metrotvnews.com/read/NA0Cj8Z8-tangki-pertamina-tuban-diduga-bocor-ribuan-warga-mengungsi" target="_blank" rel="noopener">https://www.metrotvnews.com/read/NA0Cj8Z8-tangki-pertamina-tuban-diduga-bocor-ribuan-warga-mengungsi</a></li></ul>
+  </article>
+ </div>
+</section>
+
+<!-- AKSI -->
+<section id="aksi" hidden>
+ <div class="wrap">
+  <div class="sec-head"><span class="mono">Aksi</span><h2>Ke mana sampahmu pergi?</h2><p>Pilih satu barang, lalu apa yang kamu lakukan. Jalannya cerita berubah sesuai pilihanmu.</p></div>
+  <div class="cols">
+   <div class="tool" id="quiz">
+    <h4>1. Barang yang kamu bawa ke pantai</h4>
+    <div class="choices" data-step="item">
+     <button type="button" data-v="gelas" aria-pressed="false">Gelas plastik es teh</button>
+     <button type="button" data-v="sachet" aria-pressed="false">Bungkus sachet / jajan</button>
+     <button type="button" data-v="kelapa" aria-pressed="false">Sabut kelapa muda</button>
+     <button type="button" data-v="popok" aria-pressed="false">Popok bayi</button>
+    </div>
+    <div id="q2" hidden>
+     <h4>2. Setelah selesai, kamu…</h4>
+     <div class="choices" data-step="act">
+      <button type="button" data-v="pasir" aria-pressed="false">Tinggal di pasir</button>
+      <button type="button" data-v="tong" aria-pressed="false">Buang ke tong campur</button>
+      <button type="button" data-v="pilah" aria-pressed="false">Masukkan ke titik pilah</button>
+      <button type="button" data-v="pulang" aria-pressed="false">Bawa pulang</button>
+     </div>
+    </div>
+    <div class="out" id="qout" aria-live="polite"><p>Pilih barang dulu untuk memulai.</p></div>
+    <button type="button" class="btn" id="qreset" style="justify-self:start">Ulangi</button>
+   </div>
+   <div class="tool" id="calc">
+    <h4>Hitung bekal sekali pakai rombonganmu</h4>
+    <div class="field"><label for="c-org">Jumlah orang dalam rombongan</label><input id="c-org" type="number" min="1" max="200" value="4"></div>
+    <div class="field"><label for="c-kali">Berapa kali ke pantai dalam setahun</label><input id="c-kali" type="number" min="1" max="365" value="12"></div>
+    <div class="chk" role="group" aria-label="Barang sekali pakai per orang">
+     <label><input type="checkbox" id="c-gelas" checked> gelas/botol plastik</label>
+     <label><input type="checkbox" id="c-kresek" checked> kantong kresek</label>
+     <label><input type="checkbox" id="c-sedotan"> sedotan</label>
+     <label><input type="checkbox" id="c-sachet" checked> bungkus jajan</label>
+    </div>
+    <div class="out" aria-live="polite"><span class="big" id="c-total">0</span><p id="c-text"></p></div>
+    <p class="src">Angka ini hitungan sederhana dari pilihanmu (orang × barang × kunjungan), bukan data penelitian.</p>
+   </div>
+  </div>
+
+  <div class="tool" id="umpan-balik" style="margin-top:2rem">
+   <div class="sec-head" style="margin:0"><span class="mono">Uji website</span><h2 style="font-size:2rem">Beri umpan balik</h2><p>Butuh dua menit. Jawabanmu dipakai untuk memperbaiki website ini.</p></div>
+   <form id="fb" novalidate>
+    <div class="field"><label for="fb-dom">Kamu tinggal di</label>
+     <select id="fb-dom"><option value="">Pilih…</option><option>Kabupaten Tuban (pesisir)</option><option>Kabupaten Tuban (bukan pesisir)</option><option>Luar Tuban</option></select></div>
+    <fieldset class="field" style="border:0;padding:0;margin:1rem 0 0"><legend>Seberapa mudah isi website ini dipahami? (1 = sangat sulit, 5 = sangat mudah)</legend>
+     <div class="likert" id="fb-paham">
+      <label><input type="radio" name="paham" value="1">1</label><label><input type="radio" name="paham" value="2">2</label><label><input type="radio" name="paham" value="3">3</label><label><input type="radio" name="paham" value="4">4</label><label><input type="radio" name="paham" value="5">5</label>
+     </div></fieldset>
+    <div class="field" id="fb-low" hidden style="margin-top:1rem"><label for="fb-bingung">Bagian mana yang membingungkan?</label><textarea id="fb-bingung"></textarea></div>
+    <div class="field" id="fb-high" hidden style="margin-top:1rem"><label for="fb-yakin">Bagian mana yang paling meyakinkan?</label><textarea id="fb-yakin"></textarea></div>
+    <fieldset class="field" style="border:0;padding:0;margin:1rem 0 0"><legend>Tampilan dan navigasi website (1–5)</legend>
+     <div class="likert"><label><input type="radio" name="ui" value="1">1</label><label><input type="radio" name="ui" value="2">2</label><label><input type="radio" name="ui" value="3">3</label><label><input type="radio" name="ui" value="4">4</label><label><input type="radio" name="ui" value="5">5</label></div></fieldset>
+    <div class="field" style="margin-top:1rem"><label for="fb-mau">Setelah membaca, apakah kamu bersedia ikut aksi JALA PESISIR?</label>
+     <select id="fb-mau"><option value="">Pilih…</option><option>Ya, bersedia</option><option>Mungkin</option><option>Tidak</option></select></div>
+    <div class="field" style="margin-top:1rem"><label for="fb-saran">Saran perbaikan</label><textarea id="fb-saran"></textarea></div>
+    <div class="cta" style="margin-top:1.2rem"><button class="btn solid" type="submit">Buat ringkasan jawaban</button></div>
+    <p id="fb-err" class="src" role="alert"></p>
+   </form>
+   <div id="fb-done" hidden>
+    <p>Terima kasih. Kirim jawabanmu lewat formulir resmi di bawah, atau salin ringkasan ini dan kirim ke penulis.</p>
+    <pre class="copy" id="fb-text"></pre>
+    <div class="cta"><button class="btn" type="button" id="fb-copy">Salin ringkasan</button><a class="btn solid" id="fb-form" href="#" target="_blank" rel="noopener" hidden>Buka formulir umpan balik</a></div>
+    <p class="src" id="fb-note"></p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang" hidden>
+ <div class="wrap">
+  <div class="sec-head"><span class="mono">Informasi website &amp; penulis</span><h2>Tentang Jala Pesisir</h2></div>
+  <div class="cols">
+   <div class="card">
+    <h3>Website</h3>
+    <dl class="kv">
+     <dt>Nama</dt><dd>Jala Pesisir Tuban</dd>
+     <dt>Tujuan</dt><dd>Kampanye digital persuasif untuk mendorong pantai berpengelola di Tuban, sebagai bagian dari Asesmen Sumatif Proyek Tematik Kelas 12 (Website Evaluasi Kebijakan Lingkungan dan Kampanye Digital Kedaulatan Hijau).</dd>
+     <dt>Sasaran</dt><dd>Pelajar dan pemuda, pengunjung pantai, pedagang dan nelayan pesisir, Dinas Lingkungan Hidup Tuban.</dd>
+     <dt>Versi</dt><dd>1.0 · Oktober 2026</dd>
+    </dl>
+   </div>
+   <div class="card">
+    <h3>Penulis</h3>
+    <dl class="kv">
+     <dt>Nama</dt><dd>Khofifah Nur Aini</dd>
+     <dt>Rombel</dt><dd>12D Sorake</dd>
+     <dt>Sekolah</dt><dd>Sekolah Murid Merdeka</dd>
+     <dt>Kontak</dt><dd>[alamat surel sekolah penulis]</dd>
+    </dl>
+   </div>
+  </div>
+  <h3 style="margin:2rem 0 .8rem">Alasan pilihan desain</h3>
+  <div class="cols">
+   <ul class="list">
+    <li><b>Warna laut dan tali jala.</b><span>Biru-hijau laut dalam sebagai warna utama agar terasa tenang dan dapat dipercaya; oranye tali jaring nelayan sebagai penanda peringatan dan ajakan bertindak. Kontras teks dijaga tinggi di mode terang maupun gelap.</span></li>
+    <li><b>Huruf papan nama perahu.</b><span>Judul memakai huruf tegak rapat seperti cat nama di lambung perahu nelayan pantura; esai memakai huruf berkait yang nyaman untuk bacaan panjang; angka dan sumber memakai huruf mono agar data mudah dibedakan dari opini.</span></li>
+    <li><b>Pola jala di bagian pembuka.</b><span>Pola belah ketupat mengingatkan pada jaring nelayan, sekaligus simbol solusi: menjaring sampah sebelum sampai ke laut.</span></li>
+   </ul>
+   <ul class="list">
+    <li><b>Satu halaman, banyak bagian.</b><span>Navigasi atas selalu terlihat; setiap bagian punya alamat sendiri (misal #esai) sehingga bisa dibagikan langsung.</span></li>
+    <li><b>Dibuat untuk ponsel.</b><span>Sebagian besar audiens membuka dari HP, jadi tata letak menyusun diri ke satu kolom dan tabel bisa digeser.</span></li>
+    <li><b>Interaktif yang bermakna.</b><span>Kuis bercabang, kalkulator bekal, grafik yang bisa disentuh, dan formulir dengan pertanyaan lanjutan yang menyesuaikan jawaban.</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- SUMBER -->
+<section id="sumber" hidden>
+ <div class="wrap">
+  <div class="sec-head"><span class="mono">Kredit, hak cipta &amp; UU ITE</span><h2>Sumber dan kredit</h2></div>
+  <div class="cols">
+   <div class="card"><h3>Pernyataan kepatuhan</h3>
+    <p>Website ini disusun dengan memperhatikan UU No. 28 Tahun 2014 tentang Hak Cipta dan UU ITE (UU No. 11 Tahun 2008 beserta perubahannya, terakhir UU No. 1 Tahun 2024). Kutipan dan data dicantumkan sumbernya; tidak ada foto atau tulisan orang lain yang disalin. Foto dokumentasi media hanya ditautkan ke sumber aslinya. Isi tidak memuat ujaran kebencian, SARA, atau informasi bohong; angka yang meragukan ditandai sebagai keterbatasan data.</p></div>
+   <div class="card"><h3>Aset visual</h3>
+    <ul class="list">
+     <li>Grafik: dibuat sendiri oleh penulis dari data yang dikutip di bawah.</li>
+     <li>Logo, ikon, pola jala: digambar sendiri dengan SVG/CSS.</li>
+     <li>Huruf: Big Shoulders Display, Literata, IBM Plex Mono melalui Google Fonts (lisensi SIL Open Font License).</li>
+     <li>Tautan foto lapangan: Beritajatim, Mongabay Indonesia (foto: Falahi Mubarok), JatimTIMES, detikJatim, Radar Tuban. Hak cipta tetap milik pemiliknya.</li>
+    </ul></div>
+  </div>
+  <h3 style="margin:2rem 0 .8rem">Daftar pustaka (APA 7)</h3>
+  <ul class="refs"><li>Andreyan. (2026, 25 Oktober). BPBD Tuban terancam kehabisan anggaran air bersih, 40 desa terdampak kekeringan. <i>Radar Tuban</i>. <a href="https://radartuban.jawapos.com/daerah/2610250021/bpbd-tuban-terancam-kehabisan-anggaran-air-bersih-40-desa-terdampak-kekeringan" target="_blank" rel="noopener">https://radartuban.jawapos.com/daerah/2610250021/bpbd-tuban-terancam-kehabisan-anggaran-air-bersih-40-desa-terdampak-kekeringan</a></li>
+<li>Antara. (2022, Oktober). Gerakan Bulan Cinta Laut KKP rangkul nelayan angkut 67 ton sampah. <i>Antara Bali</i>. <a href="https://bali.antaranews.com/berita/296837/gerakan-bulan-cinta-laut-kkp-rangkul-nelayan-angkut-67-ton-sampah" target="_blank" rel="noopener">https://bali.antaranews.com/berita/296837/gerakan-bulan-cinta-laut-kkp-rangkul-nelayan-angkut-67-ton-sampah</a></li>
+<li>Beritajatim. (2023a, 13 Juli). Banyak sampah plastik dan pampers, ratusan personel Polres Tuban bersihkan Pantai Boom. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/?p=1026074" target="_blank" rel="noopener">https://beritajatim.com/?p=1026074</a></li>
+<li>Beritajatim. (2023b, 9 Desember). [Aksi bersih Pantai Boom Tuban kumpulkan 7 ton sampah]. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/?p=1109940" target="_blank" rel="noopener">https://beritajatim.com/?p=1109940</a></li>
+<li>Beritajatim. (2024, 14 Agustus). [Warga Grabagan Tuban kesulitan air bersih saat kemarau]. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/?p=1231413" target="_blank" rel="noopener">https://beritajatim.com/?p=1231413</a></li>
+<li>Beritajatim. (2024, Juni). [Lima warga terdampak uap tangki TBBM Tuban dipulangkan dari Puskesmas Jenu]. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/?p=1200567" target="_blank" rel="noopener">https://beritajatim.com/?p=1200567</a></li>
+<li>Beritajatim. (2026, Juni). Didominasi sampah plastik, ratusan prajurit Batalyon TP 932 Sunan Bonang bersih-bersih kawasan Pantai Boom Tuban. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/didominasi-sampah-plastik-ratusan-prajurit-batalyon-tp-932-sunan-bonang-bersih-bersih-kawasan-pantai-boom-tuban" target="_blank" rel="noopener">https://beritajatim.com/didominasi-sampah-plastik-ratusan-prajurit-batalyon-tp-932-sunan-bonang-bersih-bersih-kawasan-pantai-boom-tuban</a></li>
+<li>Beritajatim. (2026, 1 September). Kekeringan meluas, BPBD Tuban distribusikan 294 ribu liter air bersih ke 3.126 KK. <i>Beritajatim.com</i>. <a href="https://beritajatim.com/kekeringan-meluas-bpbd-tuban-distribusikan-294-ribu-liter-air-bersih-ke-3-126-kk" target="_blank" rel="noopener">https://beritajatim.com/kekeringan-meluas-bpbd-tuban-distribusikan-294-ribu-liter-air-bersih-ke-3-126-kk</a></li>
+<li>Beritajatim. (t.t.). Ecoton dan mahasiswa kembali lakukan brand audit di pantai Tuban, penuh sampah plastik sekali pakai. <i>Beritajatim.com</i>. Diakses 30 Oktober 2026, dari <a href="https://beritajatim.com/ecoton-dan-mahasiswa-kembali-lakukan-brand-audit-di-pantai-tuban-penuh-sampah-plastik-sekali-pakai" target="_blank" rel="noopener">https://beritajatim.com/ecoton-dan-mahasiswa-kembali-lakukan-brand-audit-di-pantai-tuban-penuh-sampah-plastik-sekali-pakai</a></li>
+<li>Darmawan, A. D. (2026, 19 Agustus). 14,13% penduduk di Kabupaten Tuban masuk kategori miskin. <i>Databoks</i>. <a href="https://databoks.katadata.co.id/datapublish/2026/08/19/14-13-penduduk-di-kabupaten-tuban-masuk-kategori-miskin" target="_blank" rel="noopener">https://databoks.katadata.co.id/datapublish/2026/08/19/14-13-penduduk-di-kabupaten-tuban-masuk-kategori-miskin</a></li>
+<li>Industry.co.id. (2023, Desember). Yayasan WINGS Peduli gelar aksi bersih Pantai Boom Tuban, kerahkan ratusan masyarakat kumpulkan sampah. <i>Industry.co.id</i>. <a href="https://www.industry.co.id/read/128656/yayasan-wings-peduli-gelar-aksi-bersih-pantai-boom-tuban-kerahkan-ratusan-masyarakat-kumpulkan-sampah" target="_blank" rel="noopener">https://www.industry.co.id/read/128656/yayasan-wings-peduli-gelar-aksi-bersih-pantai-boom-tuban-kerahkan-ratusan-masyarakat-kumpulkan-sampah</a></li>
+<li>Kabartuban. (2026, 2 Oktober). Imbas kemarau panjang, 28 desa di Tuban mulai berebut pasokan air bersih. <i>Kabartuban.com</i>. <a href="https://kabartuban.com/imbas-kemarau-panjang-28-desa-di-tuban-mulai-berebut-pasokan-air-bersih/41976" target="_blank" rel="noopener">https://kabartuban.com/imbas-kemarau-panjang-28-desa-di-tuban-mulai-berebut-pasokan-air-bersih/41976</a></li>
+<li>Kabartuban. (2026, 7 September). Kemarau meluas, BPBD Tuban tangani krisis air bersih di 18 desa. <i>Kabartuban.com</i>. <a href="https://kabartuban.com/kemarau-meluas-bpbd-tuban-tangani-krisis-air-bersih-di-18-desa/41694" target="_blank" rel="noopener">https://kabartuban.com/kemarau-meluas-bpbd-tuban-tangani-krisis-air-bersih-di-18-desa/41694</a></li>
+<li>Kusumawati, M. M. (2021). <i>Pengelolaan daur ulang sampah plastik di kawasan wisata Pantai Panyuran Kabupaten Tuban untuk meningkatkan nilai jual sampah dengan peran serta masyarakat</i> [Skripsi, UPN Veteran Jawa Timur]. <a href="https://repository.upnjatim.ac.id/3472/" target="_blank" rel="noopener">https://repository.upnjatim.ac.id/3472/</a></li>
+<li>Lokahita, B. (2025). <i>Readiness preparation of the city for operating sustainable waste to RDF processing facility</i> [Materi presentasi]. Institute for Global Environmental Strategies. <a href="https://www.iges.or.jp/sites/default/files/2025-01/08.Dr_.%20Eng.%20Baskoro%20Lokahita_Readiness%20Preparation%20of%20the%20City%20for%20Operating%20Sustainable%20Waste%20to%20RDF%20Processing_GFacility.pdf" target="_blank" rel="noopener">https://www.iges.or.jp/sites/default/files/2025-01/08.Dr_.%20Eng.%20Baskoro%20Lokahita_Readiness%20Preparation%20of%20the%20City%20for%20Operating%20Sustainable%20Waste%20to%20RDF%20Processing_GFacility.pdf</a></li>
+<li>Medcom.id. (2023, 2 Oktober). Menengok komitmen pemerintah kurangi sampah laut hingga 70%. <i>Medcom.id</i>. <a href="https://www.medcom.id/nasional/peristiwa/DkqMmEpk-menengok-komitmen-pemerintah-kurangi-sampah-laut-hingga-70" target="_blank" rel="noopener">https://www.medcom.id/nasional/peristiwa/DkqMmEpk-menengok-komitmen-pemerintah-kurangi-sampah-laut-hingga-70</a></li>
+<li>Mulyono, J., &amp; Priantika, D. M. (2023). Tindakan sosial masyarakat dalam pemenuhan air bersih pada daerah kekeringan di Dusun Tlogopule Kabupaten Tuban. <i>Huma: Jurnal Sosiologi, 2</i>(2), 106–117. <a href="https://ppis.ulm.ac.id/index.php/JH/article/download/63/37" target="_blank" rel="noopener">https://ppis.ulm.ac.id/index.php/JH/article/download/63/37</a></li>
+<li>Mutmainnah, S., Larasati, D. A., Segara, N. B., &amp; Virgiawan, D. B. (2026). Pengaruh keberadaan Tempat Pembuangan Akhir (TPA) sampah Gunung Panggung Tuban terhadap kondisi sosial ekonomi masyarakat sekitar. <i>Dialektika Pendidikan IPS, 6</i>(2), 174–185. <a href="https://ejournal.unesa.ac.id/index.php/PENIPS/article/download/78158/55746/211343" target="_blank" rel="noopener">https://ejournal.unesa.ac.id/index.php/PENIPS/article/download/78158/55746/211343</a></li>
+<li>Pemerintah Kabupaten Tuban. (2021). <i>Peraturan Daerah Kabupaten Tuban Nomor 4 Tahun 2021 tentang Pengelolaan Sampah Plastik</i>. <a href="https://jdih.tubankab.go.id/peraturan/detail/222" target="_blank" rel="noopener">https://jdih.tubankab.go.id/peraturan/detail/222</a></li>
+<li>Pemerintah Kabupaten Tuban. (2021, 18 Oktober). <i>Pendistribusian bantuan air bersih, wilayah terdampak kekeringan di Kabupaten Tuban</i> [Video]. <a href="https://tubankab.go.id/video/pendistribusian-bantuan-air-bersih-wilayah-terdampak-kekeringan-di-kabupaten-tuban" target="_blank" rel="noopener">https://tubankab.go.id/video/pendistribusian-bantuan-air-bersih-wilayah-terdampak-kekeringan-di-kabupaten-tuban</a></li>
+<li>Pemerintah Kabupaten Tuban. (2025). <i>Peraturan Daerah Kabupaten Tuban Nomor 12 Tahun 2025 tentang Perubahan atas Peraturan Daerah Nomor 10 Tahun 2015 tentang Pengelolaan Sampah</i>. <a href="https://peraturan.bpk.go.id/Details/350863/perda-kab-tuban-no-12-tahun-2025" target="_blank" rel="noopener">https://peraturan.bpk.go.id/Details/350863/perda-kab-tuban-no-12-tahun-2025</a></li>
+<li>Republik Indonesia. (1945). <i>Undang-Undang Dasar Negara Republik Indonesia Tahun 1945</i>.</li>
+<li>Republik Indonesia. (2008). <i>Undang-Undang Nomor 18 Tahun 2008 tentang Pengelolaan Sampah</i>.</li>
+<li>Republik Indonesia. (2009). <i>Undang-Undang Nomor 32 Tahun 2009 tentang Perlindungan dan Pengelolaan Lingkungan Hidup</i>.</li>
+<li>Republik Indonesia. (2018). <i>Peraturan Presiden Nomor 83 Tahun 2018 tentang Penanganan Sampah Laut</i>.</li>
+<li>Rofiq, A. (2024, 10 Juni). Pertamina gerak cepat tangani kebocoran tangki TBBM Tuban. <i>DetikJatim</i>. <a href="https://www.detik.com/jatim/berita/d-7383409/pertamina-gerak-cepat-tangani-kebocoran-tangki-tbbm-tuban" target="_blank" rel="noopener">https://www.detik.com/jatim/berita/d-7383409/pertamina-gerak-cepat-tangani-kebocoran-tangki-tbbm-tuban</a></li>
+<li>Tamimi, M. (2023, 19 November). Penanganan sampah di Jawa Timur masih buruk. <i>Mongabay Indonesia</i>. <a href="https://mongabay.co.id/2023/11/19/penanganan-sampah-di-jawa-timur-masih-buruk/" target="_blank" rel="noopener">https://mongabay.co.id/2023/11/19/penanganan-sampah-di-jawa-timur-masih-buruk/</a></li>
+<li>Titah, H. S., Tangahu, B. V., Purwanti, I. F., Mangkoedihardjo, S., Mashudi, Santoso, I. B., &amp; In, H. (2024). Penentuan laju timbulan dan komposisi sampah dalam program pengabdian masyarakat di Wisata Pantai Kelapa Panyuran Kabupaten Tuban. <i>Sewagati: Jurnal Pengabdian kepada Masyarakat, 8</i>(4), 1900–1912. <a href="https://doi.org/10.12962/j26139960.v8i4.1098" target="_blank" rel="noopener">https://doi.org/10.12962/j26139960.v8i4.1098</a></li>
+<li>Wahdiana, L. N. (2025). Analisis strategi bank sampah sebagai media pengelolaan sampah rumah tangga di Desa Tingkis. <i>Jurnal Kesehatan Tambusai, 6</i>(3), 9498–9510. <a href="https://journal.universitaspahlawan.ac.id/index.php/jkt/article/download/47855/30115/167463" target="_blank" rel="noopener">https://journal.universitaspahlawan.ac.id/index.php/jkt/article/download/47855/30115/167463</a></li>
+<li>Yulianto, B. (2024, 10 Juni). Tangki Pertamina Tuban diduga bocor, ribuan warga mengungsi. <i>Metrotvnews.com</i>. <a href="https://www.metrotvnews.com/read/NA0Cj8Z8-tangki-pertamina-tuban-diduga-bocor-ribuan-warga-mengungsi" target="_blank" rel="noopener">https://www.metrotvnews.com/read/NA0Cj8Z8-tangki-pertamina-tuban-diduga-bocor-ribuan-warga-mengungsi</a></li></ul>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">Jala Pesisir Tuban · Khofifah Nur Aini · Asesmen Sumatif Tematik 12, Sekolah Murid Merdeka, TA 2026/2027 · Data per 30 Oktober 2026.</div></footer>
+<div id="tip" hidden></div>
+
+<script>
+/* ===== Pengaturan penulis: tempel tautan Google Form di sini ===== */
+const FORM_URL = ""; // contoh: "https://forms.gle/xxxx"
+
+/* ---------- router ---------- */
+const pages=[...document.querySelectorAll('main > section')].map(s=>s.id);
+function route(){
+  let id=(location.hash||'#beranda').slice(1);
+  let target=id;
+  if(id==='umpan-balik') target='aksi';
+  if(!pages.includes(target)) target='beranda';
+  document.querySelectorAll('main > section').forEach(s=>s.hidden=s.id!==target);
+  document.querySelectorAll('.nav a').forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+target?'page':'false'));
+  if(id==='umpan-balik'){document.getElementById('umpan-balik').scrollIntoView();}
+  else window.scrollTo(0,0);
+}
+addEventListener('hashchange',route); route(); addEventListener('load',()=>setTimeout(route,0));
+
+/* ---------- charts ---------- */
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const tip=document.getElementById('tip');
+function showTip(e,txt){tip.textContent=txt;tip.hidden=false;const r=e.target.getBoundingClientRect?e.target.getBoundingClientRect():{left:0,top:0};
+  const x=(e.clientX||r.left+r.width/2)+12, y=(e.clientY||r.top)-10;tip.style.left=Math.min(x,innerWidth-250)+'px';tip.style.top=Math.max(8,y-tip.offsetHeight)+'px';}
+function hideTip(){tip.hidden=true}
+const fmt=(v,d=1)=>v.toLocaleString('id-ID',{maximumFractionDigits:d});
+const NS='http://www.w3.org/2000/svg';
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function bars(host,{labels,values,colors,unit,max,ticks,tipText,valText}){
+  const W=420,H=250,L=44,R=10,T=26,B=46,iw=W-L-R,ih=H-T-B;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`});host.appendChild(svg);
+  ticks.forEach(t=>{const y=T+ih-ih*t/max;el('line',{x1:L,x2:W-R,y1:y,y2:y,class:'gridl'},svg);el('text',{x:L-6,y:y+4,'text-anchor':'end'},svg).textContent=fmt(t,0)});
+  el('text',{x:4,y:12},svg).textContent=unit;
+  const n=values.length,bw=Math.min(64,iw/n*0.55);
+  values.forEach((v,i)=>{
+    const cx=L+iw*(i+.5)/n,h=ih*v/max,y=T+ih-h;
+    const p=el('path',{d:`M${cx-bw/2},${T+ih} V${y+4} q0,-4 4,-4 H${cx+bw/2-4} q4,0 4,4 V${T+ih} Z`,fill:css(colors[i]),class:'bar',tabindex:0,role:'img','aria-label':tipText(i)},svg);
+    p.addEventListener('mousemove',e=>showTip(e,tipText(i)));p.addEventListener('mouseleave',hideTip);
+    p.addEventListener('focus',e=>showTip({target:p},tipText(i)));p.addEventListener('blur',hideTip);
+    p.addEventListener('click',e=>showTip(e,tipText(i)));
+    el('text',{x:cx,y:y-7,'text-anchor':'middle',class:'val'},svg).textContent=valText(i);
+    labels[i].forEach((ln,k)=>el('text',{x:cx,y:T+ih+16+k*13,'text-anchor':'middle'},svg).textContent=ln);
+  });
+  el('line',{x1:L,x2:W-R,y1:T+ih,y2:T+ih,class:'axis'},svg);
+}
+function line(host){
+  const pts=[['31 Agu',15],['7 Sep',18],['2 Okt',28],['23 Okt',40]];
+  const W=420,H=250,L=36,R=60,T=26,B=36,iw=W-L-R,ih=H-T-B,max=60;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`});host.appendChild(svg);
+  [0,20,40,60].forEach(t=>{const y=T+ih-ih*t/max;el('line',{x1:L,x2:W-R,y1:y,y2:y,class:'gridl'},svg);el('text',{x:L-6,y:y+4,'text-anchor':'end'},svg).textContent=t});
+  el('text',{x:4,y:12},svg).textContent='desa terdampak';
+  const X=i=>L+iw*i/4, Y=v=>T+ih-ih*v/max;
+  el('path',{d:pts.map((p,i)=>(i?'L':'M')+X(i)+','+Y(p[1])).join(' '),fill:'none',stroke:css('--c1'),'stroke-width':2.5},svg);
+  el('path',{d:`M${X(3)},${Y(40)} L${X(4)},${Y(49)}`,fill:'none',stroke:css('--c1'),'stroke-width':2,'stroke-dasharray':'5 4'},svg);
+  const c4=el('circle',{cx:X(4),cy:Y(49),r:5,fill:css('--surface'),stroke:css('--c1'),'stroke-width':2,tabindex:0},svg);
+  const t4='Proyeksi BPBD: 48–50 desa jika hujan belum turun awal Desember 2026';
+  c4.addEventListener('mousemove',e=>showTip(e,t4));c4.addEventListener('mouseleave',hideTip);c4.addEventListener('focus',()=>showTip({target:c4},t4));c4.addEventListener('blur',hideTip);
+  el('text',{x:X(4),y:Y(49)-12,'text-anchor':'middle',class:'val'},svg).textContent='48–50?';
+  el('text',{x:X(4),y:T+ih+16,'text-anchor':'middle'},svg).textContent='Des*';
+  pts.forEach((p,i)=>{const c=el('circle',{cx:X(i),cy:Y(p[1]),r:5,fill:css('--c1'),stroke:css('--surface'),'stroke-width':2,tabindex:0,class:'bar'},svg);
+    const tt=`${p[0]} 2026: ${p[1]} desa terdampak kekeringan`;
+    c.addEventListener('mousemove',e=>showTip(e,tt));c.addEventListener('mouseleave',hideTip);c.addEventListener('focus',()=>showTip({target:c},tt));c.addEventListener('blur',hideTip);
+    el('text',{x:X(i),y:Y(p[1])-11,'text-anchor':'middle',class:'val'},svg).textContent=p[1];
+    el('text',{x:X(i),y:T+ih+16,'text-anchor':'middle'},svg).textContent=p[0];});
+  el('line',{x1:L,x2:W-R,y1:T+ih,y2:T+ih,class:'axis'},svg);
+}
+const CH={
+ neraca:h=>bars(h,{labels:[['Dikurangi','(3R, bank sampah)'],['Ditangani','(angkut ke TPA)'],['Tidak','terkelola']],values:[102.78,137.16,130.91],colors:['--c1','--c2','--c3'],unit:'ribu ton/tahun',max:160,ticks:[0,40,80,120,160],
+   tipText:i=>['Dikurangi: 102.780,99 ton (27,72%)','Ditangani: 137.156,05 ton (36,99%)','Tidak terkelola: 130.908,84 ton (35,30%)'][i],valText:i=>['27,7%','37,0%','35,3%'][i]}),
+ plastik:h=>bars(h,{labels:[['Kabupaten','SIPSN 2024'],['Pantai','Panyuran 2021'],['Pantai Boom','audit merek']],values:[11.02,74.75,90],colors:['--c1','--c1','--c1'],unit:'% plastik',max:100,ticks:[0,25,50,75,100],
+   tipText:i=>['Seluruh sampah kabupaten: plastik 11,02% (berat)','Pantai Panyuran: plastik 74,75% (Kusumawati, 2021)','Pantai Boom: 90% plastik sekali pakai (audit merek Ecoton–Unirow)'][i],valText:i=>['11%','74,75%','90%'][i]}),
+ timbulan:h=>bars(h,{labels:[['2020','Neraca Bappeda'],['2023','SIPSN'],['2024','SIPSN']],values:[171.42,370.85,192.91],colors:['--c1','--c3','--c1'],unit:'ribu ton/tahun',max:400,ticks:[0,100,200,300,400],
+   tipText:i=>['2020: 171.420,07 ton','2023: 370.845,88 ton — menyimpang dari tren','2024: 192.907,81 ton (dilaporkan naik 4,05%)'][i],valText:i=>['171,4','370,8','192,9'][i]}),
+ kering:h=>line(h),
+};
+function drawCharts(){document.querySelectorAll('[data-chart]').forEach(h=>{h.innerHTML='';CH[h.dataset.chart](h)})}
+drawCharts();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',drawCharts);
+new MutationObserver(drawCharts).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+/* ---------- kuis bercabang ---------- */
+const ITEM={gelas:'gelas plastik',sachet:'bungkus sachet',kelapa:'sabut kelapa',popok:'popok bayi'};
+const OUT={
+ gelas:{pasir:['Angin dan pasang membawanya ke laut. Gelas plastik tidak terurai; ia pecah menjadi serpihan kecil (mikroplastik).','Pilih titik pilah anorganik atau bawa pulang. Gelas plastik bernilai di bank sampah.'],
+        tong:['Masuk tong campur bersama sisa makanan sehingga kotor dan sulit didaur ulang; akhirnya jadi residu di TPA Gunung Panggung.','Coba titik pilah: gelas bersih bisa ditabung di Bank Sampah Pesisir.'],
+        pilah:['Gelas masuk jalur anorganik, ditimbang, dan dijual ke bank sampah induk. Hasilnya menambah tabungan nelayan dan pedagang.','Tepat. Ini jalur yang diharapkan JALA PESISIR.'],
+        pulang:['Gelas ikut ke rumah dan masuk sistem sampah rumah tanggamu. Pantai bebas dari satu gelas.','Bagus. Lebih baik lagi: bawa tumbler supaya tidak ada gelas sama sekali.']},
+ sachet:{pasir:['Sachet berlapis plastik dan aluminium sangat sulit didaur ulang. Inilah jenis sampah yang mendominasi audit merek di Pantai Boom.','Bungkus kecil paling sering lolos. Simpan di saku/tas lalu buang ke titik pilah residu.'],
+        tong:['Tercampur dan berakhir di TPA. Setidaknya tidak terbang ke laut.','Pisahkan ke residu agar petugas lebih mudah memilah.'],
+        pilah:['Masuk jalur residu dan dicatat saat audit merek. Datanya dipakai untuk menagih tanggung jawab produsen (Pasal 15 UU 18/2008).','Tepat. Data audit merek adalah senjata warga.'],
+        pulang:['Pantai bersih, tetapi sachet tetap jadi residu di rumah.','Pilih jajanan tanpa bungkus atau kemasan isi ulang bila ada.']},
+ kelapa:{pasir:['Sabut kelapa organik dan bisa terurai, tetapi menumpuk menjadi bau dan sarang lalat. Di Pantai Kelapa Panyuran, sabut adalah sampah terbanyak di area kuliner.','Organik pun perlu dikelola: masukkan ke titik pilah organik.'],
+        tong:['Tercampur plastik sehingga gagal dikompos dan hanya menambah beban TPA.','Pisahkan ke organik supaya bisa jadi kompos atau cocopeat.'],
+        pilah:['Masuk jalur organik, diolah menjadi kompos atau cocopeat yang bisa dijual.','Tepat. Organik yang dipilah adalah bahan baku, bukan sampah.'],
+        pulang:['Jarang orang membawa pulang sabut kelapa; lebih praktis dipilah di lokasi.','Gunakan titik pilah organik dekat pedagang kelapa.']},
+ popok:{pasir:['Popok mengandung plastik, gel penyerap, dan kotoran. Ia mencemari pasir serta air, dan popok termasuk sampah yang banyak dipungut di Pantai Boom.','Jangan pernah meninggalkan popok di pantai. Bungkus rapat lalu buang ke residu.'],
+        tong:['Masuk tong campur dan mengotori sampah lain sehingga tak bisa didaur ulang.','Bungkus rapat dan pisahkan ke residu.'],
+        pilah:['Masuk residu, dibungkus, lalu dikirim ke TPST/TPA tanpa mengotori sampah bernilai.','Tepat untuk barang yang tidak bisa didaur ulang.'],
+        pulang:['Pantai bersih; di rumah tetap bungkus rapat sebelum dibuang.','Bagus. Pertimbangkan popok kain saat bepergian dekat.']}
+};
+let qs={};
+document.querySelectorAll('#quiz .choices').forEach(g=>g.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  qs[g.dataset.step]=b.dataset.v;
+  if(g.dataset.step==='item'){document.getElementById('q2').hidden=false;
+    if(qs.act){renderQ()}else{document.getElementById('qout').innerHTML=`<p>Kamu membawa <b>${ITEM[qs.item]}</b>. Lalu apa yang kamu lakukan?</p>`}}
+  else renderQ();
+}));
+function renderQ(){const [a,b]=OUT[qs.item][qs.act];
+  document.getElementById('qout').innerHTML=`<p class="path">${ITEM[qs.item]} → ${{pasir:'tinggal di pasir',tong:'tong campur',pilah:'titik pilah',pulang:'bawa pulang'}[qs.act]}</p><p>${a}</p><p><b>${b}</b></p>`}
+document.getElementById('qreset').addEventListener('click',()=>{qs={};document.querySelectorAll('#quiz button[aria-pressed]').forEach(x=>x.setAttribute('aria-pressed','false'));document.getElementById('q2').hidden=true;document.getElementById('qout').innerHTML='<p>Pilih barang dulu untuk memulai.</p>'});
+
+/* ---------- kalkulator ---------- */
+const cids=['c-org','c-kali','c-gelas','c-kresek','c-sedotan','c-sachet'];
+function calc(){const o=Math.max(1,+document.getElementById('c-org').value||1),k=Math.max(1,+document.getElementById('c-kali').value||1);
+  const items=['c-gelas','c-kresek','c-sedotan','c-sachet'].filter(i=>document.getElementById(i).checked).length;
+  const tot=o*k*items;document.getElementById('c-total').textContent=tot.toLocaleString('id-ID');
+  document.getElementById('c-text').textContent=items?`barang sekali pakai per tahun dari rombonganmu (${o} orang × ${items} jenis × ${k} kunjungan). Jika semuanya dibawa pulang atau dipilah, sebanyak itulah barang yang tidak berakhir di pasir Pantai Boom.`:'Rombonganmu tidak membawa barang sekali pakai. Pertahankan!'}
+cids.forEach(i=>document.getElementById(i).addEventListener('input',calc));calc();
+
+/* ---------- umpan balik ---------- */
+const f=document.getElementById('fb');
+f.addEventListener('change',e=>{if(e.target.name==='paham'){const v=+e.target.value;document.getElementById('fb-low').hidden=v>3;document.getElementById('fb-high').hidden=v<=3}});
+f.addEventListener('submit',e=>{e.preventDefault();
+  const g=n=>(f.querySelector(`input[name=${n}]:checked`)||{}).value||'';
+  const v=id=>document.getElementById(id).value.trim();
+  if(!g('paham')||!g('ui')||!v('fb-mau')){document.getElementById('fb-err').textContent='Lengkapi dua penilaian 1–5 dan pilihan kesediaan ikut aksi.';return}
+  document.getElementById('fb-err').textContent='';
+  const lines=['Umpan balik website Jala Pesisir Tuban',`Domisili: ${v('fb-dom')||'-'}`,`Kemudahan dipahami (1-5): ${g('paham')}`,
+    +g('paham')<=3?`Membingungkan: ${v('fb-bingung')||'-'}`:`Paling meyakinkan: ${v('fb-yakin')||'-'}`,`Tampilan & navigasi (1-5): ${g('ui')}`,`Bersedia ikut aksi: ${v('fb-mau')}`,`Saran: ${v('fb-saran')||'-'}`];
+  document.getElementById('fb-text').textContent=lines.join('\n');
+  document.getElementById('fb-done').hidden=false;
+  const a=document.getElementById('fb-form');
+  if(FORM_URL){a.href=FORM_URL;a.hidden=false;document.getElementById('fb-note').textContent=''}
+  else document.getElementById('fb-note').textContent='Formulir resmi belum ditautkan oleh penulis; untuk sementara salin ringkasan di atas dan kirim ke penulis.';
+  document.getElementById('fb-done').scrollIntoView({block:'nearest'});
+});
+document.getElementById('fb-copy').addEventListener('click',async()=>{const t=document.getElementById('fb-text');
+  try{await navigator.clipboard.writeText(t.textContent);document.getElementById('fb-copy').textContent='Tersalin'}
+  catch{const r=document.createRange();r.selectNodeContents(t);const s=getSelection();s.removeAllRanges();s.addRange(r);document.getElementById('fb-copy').textContent='Teks terpilih, tekan salin'}});
+</script>
+
+</html>
